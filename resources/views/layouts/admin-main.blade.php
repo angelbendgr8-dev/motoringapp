@@ -819,19 +819,19 @@ License: You must have a valid license purchased only from themeforest(the above
                     <ul class="">
                         <li>
                             <a href="side-menu-light-categories.html" class="side-menu">
-                                <div class="side-menu__icon"> <i data-lucide="plus"></i> </div>
+                                <div class="side-menu__icon"> <i data-lucide="eye"></i> </div>
                                 <div class="side-menu__title"> MarkekPlace Category </div>
                             </a>
                         </li>
                         <li>
                             <a href="side-menu-light-add-product.html" class="side-menu">
-                                <div class="side-menu__icon"> <i data-lucide="plus"></i> </div>
+                                <div class="side-menu__icon"> <i data-lucide="eye"></i> </div>
                                 <div class="side-menu__title"> Car Brand </div>
                             </a>
                         </li>
                         <li>
                             <a href="side-menu-light-add-product.html" class="side-menu">
-                                <div class="side-menu__icon"> <i data-lucide="plus"></i> </div>
+                                <div class="side-menu__icon"> <i data-lucide="eye"></i> </div>
                                 <div class="side-menu__title"> Featured Products </div>
                             </a>
                         </li>
