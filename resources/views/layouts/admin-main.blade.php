@@ -22,14 +22,18 @@ License: You must have a valid license purchased only from themeforest(the above
     <meta name="author" content="LEFT4CODE">
     <title>Dashboard - Midone - Tailwind HTML Admin Template</title>
     <!-- BEGIN: CSS Assets-->
-    @vite('resources/css/app.css')
     <link rel="stylesheet" href="{{ asset('css/app.css') }}" />
+    @vite('resources/css/app.css')
+    @livewireStyles
+    <script defer src="https://unpkg.com/alpinejs@3.x.x/dist/cdn.min.js"></script>
+
     <!-- END: CSS Assets-->
 </head>
 <!-- END: Head -->
 
 <body class="py-5 md:py-0 bg-black/[0.15] dark:bg-transparent">
     <!-- BEGIN: Mobile Menu -->
+
     <div class="mobile-menu md:hidden">
         <div class="mobile-menu-bar">
             <a href="" class="flex mr-auto">
@@ -723,13 +727,13 @@ License: You must have a valid license purchased only from themeforest(the above
                     </a>
                     <ul class="">
                         <li>
-                            <a href="side-menu-light-dashboard-overview-1.html" class="side-menu">
+                            <a href="{{route('admin.add.services')}}" class="side-menu">
                                 <div class="side-menu__icon"> <i data-lucide="plus-circle"></i> </div>
                                 <div class="side-menu__title">Add Service</div>
                             </a>
                         </li>
                         <li>
-                            <a href="simple-menu-light-dashboard-overview-1.html" class="side-menu">
+                            <a href="{{route('admin.manage.services')}}" class="side-menu">
                                 <div class="side-menu__icon"> <i data-lucide="activity"></i> </div>
                                 <div class="side-menu__title"> Manage Services </div>
                             </a>
@@ -772,7 +776,7 @@ License: You must have a valid license purchased only from themeforest(the above
                     </a>
                     <ul class="">
                         <li>
-                            <a href="side-menu-light-product-list.html" class="side-menu">
+                            <a href="#" class="side-menu">
                                 <div class="side-menu__icon"> <i data-lucide="truck"></i> </div>
                                 <div class="side-menu__title">Service Request</div>
                             </a>
@@ -818,7 +822,7 @@ License: You must have a valid license purchased only from themeforest(the above
                     </a>
                     <ul class="">
                         <li>
-                            <a href="side-menu-light-categories.html" class="side-menu">
+                            <a href="{{route('admin.manage.categories')}}" class="side-menu">
                                 <div class="side-menu__icon"> <i data-lucide="eye"></i> </div>
                                 <div class="side-menu__title"> MarkekPlace Category </div>
                             </a>
@@ -933,7 +937,7 @@ License: You must have a valid license purchased only from themeforest(the above
                 <!-- END: Account Menu -->
             </div>
             <!-- END: Top Bar -->
-            @yield('content')
+            {{$slot}}
         </div>
         <!-- END: Content -->
     </div>
@@ -944,6 +948,10 @@ License: You must have a valid license purchased only from themeforest(the above
     </script>
     <script src="https://maps.googleapis.com/maps/api/js?key=[" your-google-map-api"]&libraries=places"></script>
     <script src="{{ asset('js/app.js') }}"></script>
+    @livewireScripts
+    <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+
+    <x-livewire-alert::scripts />
     <!-- END: JS Assets-->
 </body>
 

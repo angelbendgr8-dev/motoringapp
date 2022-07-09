@@ -4,8 +4,63 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "eb923aa2582b9692ad3c92ad7c45baf4",
+    "content-hash": "7cf33583af2af354e827ef1d02e1adae",
     "packages": [
+        {
+            "name": "ascsoftw/livewire-toast",
+            "version": "1.0.1",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/ascsoftw/livewire-toast.git",
+                "reference": "8f88eb937e618ef8d34c89e9dbc19dfa6a2396af"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/ascsoftw/livewire-toast/zipball/8f88eb937e618ef8d34c89e9dbc19dfa6a2396af",
+                "reference": "8f88eb937e618ef8d34c89e9dbc19dfa6a2396af",
+                "shasum": ""
+            },
+            "require-dev": {
+                "livewire/livewire": "^2.4",
+                "orchestra/testbench": "^6.17"
+            },
+            "type": "library",
+            "extra": {
+                "laravel": {
+                    "providers": [
+                        "Ascsoftw\\LivewireToast\\LivewireToastServiceProvider"
+                    ]
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "Ascsoftw\\LivewireToast\\": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "AscSoftwares",
+                    "email": "support@ascsoftwares.com"
+                }
+            ],
+            "description": "Livewire Package to display Toast Notifications",
+            "keywords": [
+                "LivewireToast",
+                "laravel",
+                "livewire",
+                "notifications",
+                "toast"
+            ],
+            "support": {
+                "issues": "https://github.com/ascsoftw/livewire-toast/issues",
+                "source": "https://github.com/ascsoftw/livewire-toast/tree/1.0.1"
+            },
+            "time": "2021-05-25T11:07:52+00:00"
+        },
         {
             "name": "brick/math",
             "version": "0.9.3",
@@ -892,6 +947,74 @@
                 }
             ],
             "time": "2022-06-20T21:43:11+00:00"
+        },
+        {
+            "name": "jantinnerezo/livewire-alert",
+            "version": "2.2.6",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/jantinnerezo/livewire-alert.git",
+                "reference": "352d13719741fce537893bd9372504385bc99d5c"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/jantinnerezo/livewire-alert/zipball/352d13719741fce537893bd9372504385bc99d5c",
+                "reference": "352d13719741fce537893bd9372504385bc99d5c",
+                "shasum": ""
+            },
+            "require": {
+                "illuminate/support": "^5.5 || ^6.0 || ^7.0 || ^8.0 || ^9.0",
+                "livewire/livewire": "^2.0",
+                "php": "^7.4|^8.0"
+            },
+            "require-dev": {
+                "orchestra/testbench": "^6.15",
+                "phpunit/phpunit": "^9.5"
+            },
+            "type": "library",
+            "extra": {
+                "laravel": {
+                    "providers": [
+                        "Jantinnerezo\\LivewireAlert\\LivewireAlertServiceProvider"
+                    ],
+                    "aliases": {
+                        "LivewireAlert": "Jantinnerezo\\LivewireAlert\\LivewireAlertFacade"
+                    }
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "Jantinnerezo\\LivewireAlert\\": "src"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Jantinn Erezo",
+                    "email": "erezojantinn@gmail.com",
+                    "role": "Developer"
+                }
+            ],
+            "description": "This package provides a simple alert utilities for your livewire components.",
+            "homepage": "https://github.com/jantinnerezo/livewire-alert",
+            "keywords": [
+                "jantinnerezo",
+                "livewire-alert"
+            ],
+            "support": {
+                "issues": "https://github.com/jantinnerezo/livewire-alert/issues",
+                "source": "https://github.com/jantinnerezo/livewire-alert/tree/2.2.6"
+            },
+            "funding": [
+                {
+                    "url": "https://www.paypal.com/paypalme/jantinn",
+                    "type": "custom"
+                }
+            ],
+            "time": "2022-03-15T17:39:01+00:00"
         },
         {
             "name": "laravel/framework",

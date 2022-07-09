@@ -3,10 +3,10 @@
         <h1 class="text-center text-3xl font-semibold my-4">Add Category</h1>
 
         <div> <label for="regular-form-1" class="form-label">Category Name</label>
-            <input wire:model='name' type="text"
+            <input wire:model='category.name' type="text"
                 class="form-control border border-slate-200 rounded-md  @error('name') border-red-300 @enderror"
                 placeholder="Category Name">
-            @error('name')
+            @error('category.name')
                 <div class="clear-right">
                     <p class="float-right text-red-400">{{$message}}</p>
                 </div>
@@ -14,10 +14,10 @@
         </div>
         <div class="mt-3">
             <label for="regular-form-2" class="form-label">Description</label>
-            <textarea wire:model='description' id="regular-form-2" type="text"
-                class="form-control border border-slate-200 rounded-md  @error('description') border-red-300 @enderror"
+            <textarea wire:model='category.description' id="regular-form-2" type="text"
+                class="form-control border border-slate-200 rounded-md  @error('category.description') border-red-300 @enderror"
                 cols="4" rows="2"></textarea>
-            @error('description')
+            @error('category.description')
                 <div class="clear-right">
                     <p class="float-right text-red-400">{{$message}}</p>
                 </div>
@@ -27,20 +27,19 @@
         <div class="mt-3">
             <label for="regular-form-7" class="form-label">Photo</label>
             <input wire:model='picture' id="regular-form-7" type="file"
-                class="form-control border border-slate-200 rounded-md  @error('picture') border-red-300 @enderror" placeholder="Process1, Process2, process3">
+                class="form-control border border-slate-200 rounded-md  @error('picture') border-red-300 @enderror" >
              @error('picture')
                 <div class="clear-right">
                     <p class="float-right text-red-400">{{$message}}</p>
                 </div>
             @enderror
-            <div wire:loading wire:target="picture" class="text-yellow-500 my-2">Uploading, Please wait...</div>
 
         </div>
 
         <div class="flex justify-center items-center mt-10">
-            <button wire:click='addCategory' class="btn btn-primary w-32 mr-2 mb-2">
+            <button wire:click='updateCategory' class="btn btn-primary w-32 mr-2 mb-2">
                 <div >
-                    <span wire:loading.remove wire:target='addCategory' >
+                    <span wire:loading.remove wire:target='updateCategory' >
                         <svg
                             xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
                             stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
@@ -50,7 +49,7 @@
                         </svg>
 
                     </span>
-                    <span wire:loading wire:target='addCategory' class="text-white">
+                    <span wire:loading wire:target='updateCategory' class="text-white">
                         <svg width="20" viewBox="0 0 57 57" xmlns="http://www.w3.org/2000/svg" class="w-8 h-8">
                             <g fill="none" fill-rule="evenodd">
                                 <g transform="translate(1 1)">
@@ -73,7 +72,7 @@
 
                 </div>
 
-                 Add </button>
+                 Update </button>
         </div>
 
     </div>

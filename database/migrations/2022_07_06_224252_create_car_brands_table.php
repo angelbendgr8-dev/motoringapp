@@ -15,6 +15,10 @@ return new class extends Migration
     {
         Schema::create('car_brands', function (Blueprint $table) {
             $table->id();
+            $table->string('name');
+            $table->foreignId('category_id')->constrained();
+            $table->string('description');
+            $table->string('pictures');
             $table->timestamps();
         });
     }
