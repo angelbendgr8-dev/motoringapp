@@ -6,6 +6,9 @@ use App\Http\Livewire\Services\AddService;
 use App\Http\Livewire\Category\AddCategory;
 use App\Http\Livewire\Category\EditCategory;
 use App\Http\Livewire\Category\ViewCategory;
+use App\Http\Livewire\ServiceLocation\AddLocation;
+use App\Http\Livewire\ServiceLocation\EditLocation;
+use App\Http\Livewire\ServiceLocation\ViewLocations;
 use App\Http\Livewire\Services\EditService;
 use App\Http\Livewire\Services\ManageServices;
 use Illuminate\Support\Facades\Route;
@@ -43,6 +46,10 @@ Route::middleware(['auth', 'user-access:admin'])->group(function () {
     Route::get('/admin/add/category',AddCategory::class)->name('admin.add.category');
     Route::get('/admin/edit/category/{id}',EditCategory::class)->name('admin.edit.category');
     Route::get('/admin/manage/categories',ViewCategory::class)->name('admin.manage.categories');
+    // Location Routes
+    Route::get('/admin/add/Location',AddLocation::class)->name('admin.add.location');
+    Route::get('/admin/edit/location/{id}',EditLocation::class)->name('admin.edit.location');
+    Route::get('/admin/manage/locations',ViewLocations::class)->name('admin.manage.locations');
 });
 
 // require __DIR__ . '/auth.php';
