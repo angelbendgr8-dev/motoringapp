@@ -21,7 +21,7 @@ class EditService extends Component
     protected $rules = [
         'service.name' => 'required|string',
         'service.description' => 'required|string',
-        'picture' => 'image|max:1024',
+        'picture' => 'image|max:2048',
     ];
 
     public function mount($id){
@@ -52,12 +52,8 @@ class EditService extends Component
         if(Storage::exists('public/'.$this->service->picture)){
             //   dd($service->picture);
             Storage::delete('public/'.$this->service->picture);
-            
-            
-            }else{
-                dd('File does not exist.');
         }
-            
+
     }
     public function render()
     {

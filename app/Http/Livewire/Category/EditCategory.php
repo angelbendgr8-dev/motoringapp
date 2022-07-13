@@ -44,10 +44,6 @@ class EditCategory extends Component
         if(Storage::exists('public/'.$this->category->picture)){
             //   dd($service->picture);
             Storage::delete('public/'.$this->category->picture);
-
-
-            }else{
-                dd('File does not exist.');
         }
 
     }
