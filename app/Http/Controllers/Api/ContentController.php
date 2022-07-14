@@ -14,16 +14,16 @@ class ContentController extends ResponseController
     public function getLocations()
     {
         $locations = ServiceLocation::all();
-        return response()->json($locations,200);
+        return $this->sendResponse($locations, 'locations fetched successfully.');
     }
     public function getServices()
     {
         $services = Services::all();
-        return response()->json($services,200);
+        return $this->sendResponse($services, 'Services fetched successfully.');
     }
     public function getCategories()
     {
-        $category = Category::all();
-        return response()->json($category,200);
+        $categories = Category::all();
+        return $this->sendResponse($categories, 'Categories fetched successfully.');
     }
 }
