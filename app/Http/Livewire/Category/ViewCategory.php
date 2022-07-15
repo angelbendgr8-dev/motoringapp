@@ -2,7 +2,7 @@
 
 namespace App\Http\Livewire\Category;
 
-use App\Models\category;
+use App\Models\Category;
 use Livewire\Component;
 
 use Jantinnerezo\LivewireAlert\LivewireAlert;
