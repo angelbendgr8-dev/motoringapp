@@ -834,7 +834,7 @@ License: You must have a valid license purchased only from themeforest(the above
                             </a>
                         </li>
                         <li>
-                            <a href="side-menu-light-add-product.html" class="side-menu">
+                            <a href="{{route('admin.view.brands')}}" class="side-menu">
                                 <div class="side-menu__icon"> <i data-lucide="eye"></i> </div>
                                 <div class="side-menu__title"> Car Brand </div>
                             </a>

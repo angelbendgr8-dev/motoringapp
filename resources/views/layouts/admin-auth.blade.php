@@ -28,9 +28,9 @@ License: You must have a valid license purchased only from themeforest(the above
     <body class="login">
        {{$slot}}
         <!-- BEGIN: Dark Mode Switcher-->
-      
+
         <!-- END: Dark Mode Switcher-->
-        
+
         <!-- BEGIN: JS Assets-->
         <script src="{{asset('js/app.js')}}"></script>
         @livewireScripts

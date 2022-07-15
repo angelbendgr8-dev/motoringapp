@@ -1,5 +1,7 @@
 <?php
 
+use App\Http\Livewire\CarBrand\AddBrand;
+use App\Http\Livewire\CarBrand\ViewBrands;
 use App\Http\Livewire\Dashboard;
 use App\Http\Livewire\Login;
 use App\Http\Livewire\Services\AddService;
@@ -50,6 +52,9 @@ Route::middleware(['auth', 'user-access:admin'])->group(function () {
     Route::get('/admin/add/Location',AddLocation::class)->name('admin.add.location');
     Route::get('/admin/edit/location/{id}',EditLocation::class)->name('admin.edit.location');
     Route::get('/admin/manage/locations',ViewLocations::class)->name('admin.manage.locations');
+    // Location Routes
+    Route::get('/admin/add/brand',AddBrand::class)->name('admin.add.brand');
+    Route::get('/admin/view/brands',ViewBrands::class)->name('admin.view.brands');
 });
 
 // require __DIR__ . '/auth.php';
