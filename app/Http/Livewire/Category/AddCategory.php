@@ -17,13 +17,12 @@ class AddCategory extends Component
     protected $rules = [
         'name' => 'required|string',
         'description' => 'required|string',
-        'picture' => 'max:1024',
+        'picture' => 'image|max:1024',
     ];
 
     public function addCategory(){
 
         $validatedData = $this->validate();
-        dd($validatedData);
         $validatedData['picture'] = $this->picture->store('categories','public');
 
 
