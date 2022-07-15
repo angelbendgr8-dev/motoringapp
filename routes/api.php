@@ -33,4 +33,5 @@ Route::controller(ContentController::class)->group(function () {
     Route::get('content/locations', 'getLocations');
     Route::get('content/services', 'getServices');
     Route::get('content/categories', 'getCategories');
+    Route::get('content/car/brands', 'getBrands');
 });
