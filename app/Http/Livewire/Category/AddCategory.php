@@ -23,6 +23,7 @@ class AddCategory extends Component
     public function addCategory(){
 
         $validatedData = $this->validate();
+        dd($validatedData);
         $validatedData['picture'] = $this->picture->store('categories','public');
 
 
