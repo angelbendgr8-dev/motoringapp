@@ -17,7 +17,7 @@ class AddCategory extends Component
     protected $rules = [
         'name' => 'required|string',
         'description' => 'required|string',
-        'picture' => 'image|max:1024',
+        'picture' => 'max:1024',
     ];
 
     public function addCategory(){
