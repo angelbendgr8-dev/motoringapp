@@ -27,8 +27,7 @@ class AuthController extends ResponseController
         if (Auth::attempt($credentials)) {
             $user = Auth::user();
             $success['token'] =  $user->createToken('motoringapp')->plainTextToken;
-            $success['name'] =  $user->name;
-            $success['email'] = $user->email;
+            $success['user'] =  $user;
             return $this->sendResponse($success, 'User login successfully.');
         }else{
            $response = ['message'=>'invalid email or password'];
@@ -52,8 +51,7 @@ class AuthController extends ResponseController
         $input['password'] = bcrypt($input['password']);
         $user = User::create($input);
         $success['token'] =  $user->createToken('motoringapp')->plainTextToken;
-        $success['name'] =  $user->name;
-        $success['email'] = $user->email;
+        $success['user'] =  $user;
         return $this->sendResponse($success, 'User register successfully.');
     }
     public function forgotPassword(Request $request)
