@@ -31,7 +31,6 @@ class SettingController extends ResponseController
         } catch (\Throwable $th) {
             return $this->sendError('Unable to upload image',$th);
         }
-
     }
     public function changePassword(Request $request){
 
