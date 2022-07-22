@@ -21,7 +21,7 @@ class SettingController extends Controller
             $user->profile_pics = $path;
         }
         $user->save();
-        return $this->sendResponse($users, 'User Profile Pics updated successfully');
+        return $this->sendResponse($user, 'User Profile Pics updated successfully');
     }
     public function changePassword(Request $request){
 
