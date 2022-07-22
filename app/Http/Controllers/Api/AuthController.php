@@ -2,12 +2,13 @@
 
 namespace App\Http\Controllers\Api;
 
-use App\Http\Controllers\Controller;
-use App\Http\Controllers\ResponseController;
 use App\Models\User;
 use Illuminate\Http\Request;
+use App\Http\Controllers\Controller;
 use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\Password;
 use Illuminate\Support\Facades\Validator;
+use App\Http\Controllers\ResponseController;
 
 class AuthController extends ResponseController
 {
@@ -54,5 +55,25 @@ class AuthController extends ResponseController
         $success['name'] =  $user->name;
         $success['email'] = $user->email;
         return $this->sendResponse($success, 'User register successfully.');
+    }
+    public function forgotPassword(Request $request)
+    {
+        $validator = Validator::make($request->all(), [
+            'email' => 'required|email',
+        ]);
+        if ($validator->fails()) {
+            return $this->sendError('Validation Error.', $validator->errors());
+        }
+        $user = User::whereEmail($request->email)->first();
+        if($user){
+            $credentials = $validator->validated();
+
+            Password::sendResetLink($credentials);
+
+            return $this->sendResponse([], 'User register successfully.');
+
+        }else{
+            return $this->sendError('User with email not found', $validator->errors());
+        }
     }
 }

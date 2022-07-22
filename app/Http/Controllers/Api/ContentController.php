@@ -34,4 +34,8 @@ class ContentController extends ResponseController
         $brands = BrandResource::collection(CarBrand::all());
         return $this->sendResponse($brands, 'Categories fetched successfully.');
     }
+    public function getProduct(Request $request)
+    {
+        
+    }
 }
