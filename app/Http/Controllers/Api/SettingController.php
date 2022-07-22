@@ -3,6 +3,7 @@
 namespace App\Http\Controllers\Api;
 
 use App\Http\Controllers\Controller;
+use App\Models\User;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Storage;
@@ -12,15 +13,15 @@ class SettingController extends Controller
 
     public function updateProfilePics(Request $request)
     {
-        $user = Auth::user();
+        $user = User::find(Auth::id());
 
         if ($request->hasFile('image')) {
             $this->deleteOldPicture();
             $path = $request->file('image')->store('users');
-            $image = $path;
+            $user->profile_pics = $path;
         }
-        // $image->save();
-        //  return new ImageResource($image);
+        $user->save();
+        return $this->sendResponse($users, 'User Profile Pics updated successfully');
     }
     public function changePassword(Request $request){
 
