@@ -3,26 +3,35 @@
 namespace App\Http\Controllers\Api;
 
 use App\Http\Controllers\Controller;
+use App\Http\Controllers\ResponseController;
 use App\Models\User;
 use Carbon\Carbon;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Storage;
 
-class SettingController extends Controller
+class SettingController extends ResponseController
 {
 
     public function updateProfilePics(Request $request)
     {
+        // return $this->sendResponse($request->formData->, 'User Profile Pics updated successfully');;
         $user = User::find(Auth::id());
-
-        if ($request->hasFile('image')) {
-            $this->deleteOldPicture();
-            $path = $request->file('image')->store('users');
-            $user->profile_pics = $path;
+        try {
+            if ($request->file('image')) {
+                $this->deleteOldPicture();
+                $image = $request->file('image');
+                $filename = time().rand(). '.'.$image->getClientOriginalExtension();
+                $path = $request->file('image')->store('users','public');
+                $user->profile_pics = $path;
+                $user->save();
+                return $this->sendResponse($user, 'User Profile Pics updated successfully');
+            }else{
+                return $this->sendError('profile Upload failed',[]);
+            }
+        } catch (\Throwable $th) {
+            return $this->sendError('Unable to upload image',$th);
         }
-        $user->save();
-        return $this->sendResponse($user, 'User Profile Pics updated successfully');
     }
     public function changePassword(Request $request){
         $user = User::find(Auth::id());
