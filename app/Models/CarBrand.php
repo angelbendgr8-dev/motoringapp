@@ -9,6 +9,6 @@ class CarBrand extends Model
 {
     use HasFactory;
     protected $fillable = [
-        'name'
+        'name','category_id','full_name'
     ];
 }

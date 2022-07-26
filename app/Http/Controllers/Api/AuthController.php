@@ -9,6 +9,7 @@ use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Password;
 use Illuminate\Support\Facades\Validator;
 use App\Http\Controllers\ResponseController;
+use Illuminate\Support\Facades\Hash;
 
 class AuthController extends ResponseController
 {
@@ -48,7 +49,7 @@ class AuthController extends ResponseController
             return $this->sendError('Validation Error.', $validator->errors());
         }
         $input = $request->all();
-        $input['password'] = bcrypt($input['password']);
+        $input['password'] = Hash::make($input['password']);
         $user = User::create($input);
         $success['token'] =  $user->createToken('motoringapp')->plainTextToken;
         $success['user'] =  $user;

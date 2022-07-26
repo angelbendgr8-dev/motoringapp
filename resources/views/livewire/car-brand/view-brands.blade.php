@@ -17,7 +17,7 @@
                             class="event p-3 -mx-3 cursor-pointer transition duration-300 ease-in-out hover:bg-slate-100 dark:hover:bg-darkmode-400 rounded-md flex items-center">
                             <div class="w-2 h-2 bg-black rounded-full mr-3"></div>
                             <div class="pr-10">
-                                <div class="event__title truncate">{{ $brand->name }}</div>
+                                <div class="event__title truncate">{{ $brand->full_name }}</div>
 
                             </div>
                         </div>
