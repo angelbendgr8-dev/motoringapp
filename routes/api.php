@@ -2,6 +2,7 @@
 
 use App\Http\Controllers\Api\AuthController;
 use App\Http\Controllers\Api\ContentController;
+use App\Http\Controllers\Api\ProductController;
 use App\Http\Controllers\Api\ServiceController;
 use App\Http\Controllers\Api\SettingController;
 use Illuminate\Support\Facades\Route;
@@ -22,6 +23,11 @@ Route::middleware('auth:sanctum')->group(function () {
     Route::post('users/update/picture', [SettingController::class,'updateProfilePics']);
     Route::post('users/change/password', [SettingController::class,'changePassword']);
     Route::post('users/update/info', [SettingController::class,'updateProfileInfo']);
+
+    Route::controller(ProductController::class)->group(function () {
+        Route::post('users/add/product', 'addProduct');
+
+    });
 });
 
 
@@ -38,5 +44,6 @@ Route::controller(ContentController::class)->group(function () {
     Route::get('content/locations', 'getLocations');
     Route::get('content/services', 'getServices');
     Route::get('content/categories', 'getCategories');
+    Route::get('content/brands/{id}', 'getBrandById');
     Route::get('content/car/brands', 'getBrands');
 });

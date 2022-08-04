@@ -23,7 +23,7 @@ class SettingController extends ResponseController
                 $this->deleteOldPicture();
                 $image = $request->file('image');
                 $filename = time() . rand() . '.' . $image->getClientOriginalExtension();
-                $path = $request->file('image')->store('users', 'public');
+                $path = $request->file('image')->store('users', 'public'.$filename);
                 $user->profile_pics = $path;
                 $user->save();
                 return $this->sendResponse($user, 'User Profile Pics updated successfully');
@@ -31,6 +31,7 @@ class SettingController extends ResponseController
                 return $this->sendError('profile Upload failed', []);
             }
         } catch (\Throwable $th) {
+            // dd($th);
             return $this->sendError('Unable to upload image', $th);
         }
     }

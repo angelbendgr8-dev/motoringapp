@@ -1,6 +1,6 @@
 <div class="flex justify-center mt-8 md:mt-24">
     <div class="intro-y box p-12 w-[100%] md:w-[50%]">
-        <h1 class="text-center text-3xl font-semibold my-4">Add Category</h1>
+        <h1 class="my-4 text-3xl font-semibold text-center">Edit Category</h1>
 
         <div> <label for="regular-form-1" class="form-label">Category Name</label>
             <input wire:model='category.name' type="text"
@@ -36,14 +36,14 @@
 
         </div>
 
-        <div class="flex justify-center items-center mt-10">
-            <button wire:click='updateCategory' class="btn btn-primary w-32 mr-2 mb-2">
+        <div class="flex items-center justify-center mt-10">
+            <button wire:click='updateCategory' class="w-32 mb-2 mr-2 btn btn-primary">
                 <div >
                     <span wire:loading.remove wire:target='updateCategory' >
                         <svg
                             xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
                             stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
-                            icon-name="plus" data-lucide="plus" class="lucide lucide-plus w-4 h-4 mr-2">
+                            icon-name="plus" data-lucide="plus" class="w-4 h-4 mr-2 lucide lucide-plus">
                             <line x1="12" y1="5" x2="12" y2="19"></line>
                             <line x1="5" y1="12" x2="19" y2="12"></line>
                         </svg>

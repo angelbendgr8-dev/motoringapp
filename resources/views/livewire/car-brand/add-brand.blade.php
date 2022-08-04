@@ -1,6 +1,6 @@
 <div class="flex justify-center mt-8 md:mt-24">
     <div class="intro-y box p-12 w-[100%] md:w-[50%]">
-        <h1 class="text-center text-3xl font-semibold my-4">Add Brand</h1>
+        <h1 class="my-4 text-3xl font-semibold text-center">Add Brand</h1>
 
         <div> <label for="regular-form-1" class="form-label">Brand Name</label>
             <input wire:model='name' type="text"
@@ -25,28 +25,28 @@
         <div> <label for="regular-form-1" class="form-label">Brand Category</label>
             <select wire:model='category_id'
                 class="form-control  border-1 rounded-md  border-slate-200 @error('category_id') border-red-300 @enderror">
-                <option selected disabled> Category</option>
+                <option selected> Category</option>
 
                 @foreach ($categories as $category)
                     <option value="{{$category->id}}">{{ $category->name }}</option>
                 @endforeach
             </select>
             @error('category_id')
-                <div class="bg-red-100 text-xs">{{ $message }}</div>
+                <div class="text-xs bg-red-100">{{ $message }}</div>
             @enderror
         </div>
 
 
 
 
-        <div class="flex justify-center items-center mt-10">
-            <button wire:click='addBrand' class="btn btn-primary w-32 mr-2 mb-2">
+        <div class="flex items-center justify-center mt-10">
+            <button wire:click='addBrand' class="w-32 mb-2 mr-2 btn btn-primary">
                 <div>
                     <span wire:loading.remove wire:target='addBrand'>
                         <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
                             fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
                             stroke-linejoin="round" icon-name="plus" data-lucide="plus"
-                            class="lucide lucide-plus w-4 h-4 mr-2">
+                            class="w-4 h-4 mr-2 lucide lucide-plus">
                             <line x1="12" y1="5" x2="12" y2="19"></line>
                             <line x1="5" y1="12" x2="19" y2="12"></line>
                         </svg>

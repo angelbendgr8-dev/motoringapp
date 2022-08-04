@@ -34,8 +34,14 @@ class ContentController extends ResponseController
         $brands = BrandResource::collection(CarBrand::all());
         return $this->sendResponse($brands, 'Categories fetched successfully.');
     }
+    public function getBrandById($name)
+    {
+        $maker = Category::whereName($name)->first();
+        $brands = CarBrand::whereCategoryId($maker->id)->get();
+        return $this->sendResponse($brands, 'brands fetched successfully.');
+    }
     public function getProduct(Request $request)
     {
-        
+
     }
 }

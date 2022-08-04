@@ -11,6 +11,11 @@ class ViewBrands extends Component
     // public $brands;
     use WithPagination;
 
+    public function deleteBrand($id){
+        CarBrand::whereId($id)->delete();
+        return redirect(request()->header('Referer'));
+    }
+
     public function render()
     {
         return view('livewire.car-brand.view-brands',[

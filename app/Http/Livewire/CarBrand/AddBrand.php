@@ -35,7 +35,7 @@ class AddBrand extends Component
 
     public function clearFields(){
         $this->name = '';
-        $this->description = '';
+        $this->full_name = '';
         $this->picture = '';
 
     }

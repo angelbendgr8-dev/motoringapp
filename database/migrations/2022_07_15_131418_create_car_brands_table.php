@@ -15,8 +15,8 @@ return new class extends Migration
     {
         Schema::create('car_brands', function (Blueprint $table) {
             $table->id();
-            $table->foreignId('category_id')->constrained('category');
-            $table->string-('full_name');
+            $table->foreignId('category_id')->constrained('categories');
+            $table->string('full_name');
             $table->string('name');
             $table->timestamps();
         });

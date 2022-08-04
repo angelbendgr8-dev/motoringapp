@@ -18,7 +18,6 @@ class EditCategory extends Component
     protected $rules = [
         'category.name' => 'required|string',
         'category.description' => 'required|string',
-        'picture' => 'image|max:1024',
     ];
 
     public function mount($id){
@@ -30,9 +29,9 @@ class EditCategory extends Component
         $validatedData = $this->validate();
         if($this->picture){
             $this->deleteOldPicture($this->picture);
+            $this->category->picture = $this->picture->store('categories','public');
         }
 
-        $this->category->picture = $this->picture->store('categories','public');
 
 
         $this->category->save();
