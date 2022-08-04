@@ -16,14 +16,14 @@ class SettingController extends ResponseController
 
     public function updateProfilePics(Request $request)
     {
-        // return $this->sendResponse($request->formData->, 'User Profile Pics updated successfully');;
+        // return $this->sendResponse(, 'User Profile Pics updated successfully');;
         $user = User::find(Auth::id());
         try {
             if ($request->file('image')) {
                 $this->deleteOldPicture();
                 $image = $request->file('image');
                 $filename = time() . rand() . '.' . $image->getClientOriginalExtension();
-                $path = $request->file('image')->store('users', 'public'.$filename);
+                $path = $request->file('image')->store('users', 'public');
                 $user->profile_pics = $path;
                 $user->save();
                 return $this->sendResponse($user, 'User Profile Pics updated successfully');
