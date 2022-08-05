@@ -18,9 +18,7 @@ return new class extends Migration
             $table->string('maker');
             $table->string('model');
             $table->string('caryear');
-            $table->string('carColor');
             $table->string('mileage');
-            $table->string('location');
             $table->string('fuelType');
             $table->string('bodyType');
             $table->string('gearType');
