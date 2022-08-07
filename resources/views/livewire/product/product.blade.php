@@ -255,7 +255,7 @@
                                 style="width: 201px; text-align: center; display: none; align-items: center; justify-content: center; height: 64px;"
                                 tabulator-field="actions" title="">
                                 <div class="flex lg:justify-center items-center">
-                                    <a class="edit flex items-center mr-3" href="javascript:;">
+                                    <a href="{{route('admin.edit.product',$car->id)}}" class="edit flex items-center mr-3" href="javascript:;">
                                         <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24"
                                             viewBox="0 0 24 24" fill="none" stroke="currentColor"
                                             stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
@@ -285,7 +285,7 @@
                                 <div class="tabulator-col-resize-handle"></div>
                                 <div class="tabulator-col-resize-handle prev"></div>
                             </div>
-                          
+
                             <div class="tabulator-responsive-collapse">
                                 <table>
                                     <tr>

@@ -8,6 +8,7 @@ use App\Http\Livewire\Services\AddService;
 use App\Http\Livewire\Category\AddCategory;
 use App\Http\Livewire\Category\EditCategory;
 use App\Http\Livewire\Category\ViewCategory;
+use App\Http\Livewire\Product\EditProduct;
 use App\Http\Livewire\Product\Product;
 use App\Http\Livewire\ServiceLocation\AddLocation;
 use App\Http\Livewire\ServiceLocation\EditLocation;
@@ -59,6 +60,7 @@ Route::middleware(['auth', 'user-access:admin'])->group(function () {
 
     //Products Routes
     Route::get('/admin/products', Product::class)->name('admin.manage.product');
+    Route::get('/admin/edit/product/{id}', EditProduct::class)->name('admin.edit.product');
 });
 
 // require __DIR__ . '/auth.php';
