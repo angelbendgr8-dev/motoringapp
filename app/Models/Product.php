@@ -39,7 +39,7 @@ class Product extends Model
      *
      * @return \Illuminate\Database\Eloquent\Casts\Attribute
      */
-    protected function data(): Attribute
+    protected function images(): Attribute
     {
         return Attribute::make(
             get: fn ($value) => json_decode($value, true),

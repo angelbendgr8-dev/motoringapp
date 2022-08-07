@@ -1,4 +1,4 @@
-<div class="intro-y box p-5 mt-5">
+<div class=" box p-5 mt-5">
     <div class="flex flex-col sm:flex-row sm:items-end xl:items-start">
         <form id="tabulator-html-filter-form" class="xl:flex sm:mr-auto">
             <div class="sm:flex items-center sm:mr-4">
@@ -50,7 +50,7 @@
                         <div class="tabulator-col-resize-handle prev"></div>
                     </div>
                     <div class="tabulator-col tabulator-sortable" role="columnheader" aria-sort="none"
-                        tabulator-field="name" style="min-width: 200px; height: 44px; width: 238px;" title="">
+                        tabulator-field="name" style="min-width: 200px; height: 44px; width: 200px;" title="">
                         <div class="tabulator-col-content">
                             <div class="tabulator-col-title-holder">
                                 <div class="tabulator-col-title">PRODUCT NAME</div>
@@ -192,12 +192,11 @@
                 </div>
                 <div class="tabulator-frozen-rows-holder"></div>
             </div>
-            @foreach ($cars as $car)
-                <div class="tabulator-tableHolder" tabindex="0" style="height: 1268px;">
-                    <div class="tabulator-table" style="padding-top: 0px; padding-bottom: 0px;">
-
-                        <div class="tabulator-row tabulator-selectable tabulator-row-odd" role="row"
-                            style="padding-left: 0px;">
+            <div class="tabulator-tableHolder" tabindex="0">
+                <div class="tabulator-table" style="padding-top: 0px; padding-bottom: 0px;">
+                    @foreach ($cars as $index => $car)
+                        <div class="tabulator-row tabulator-selectable tabulator-row-{{ $index % 2 === 1 ? 'odd' : 'even' }}"
+                            role="row" style="padding-left: 0px;">
                             <div class="tabulator-cell tabulator-row-handle" role="gridcell"
                                 style="width: 40px; text-align: center; height: 64px;" title="">
                                 <div class="tabulator-responsive-collapse-toggle open"><span
@@ -207,11 +206,11 @@
                                 <div class="tabulator-col-resize-handle prev"></div>
                             </div>
                             <div class="tabulator-cell" role="gridcell"
-                                style="width: 238px; display: inline-flex; align-items: center; height: 64px;"
+                                style="width: 200px; display: inline-flex; align-items: center; height: 64px;"
                                 tabulator-field="name" title="">
                                 <div>
-                                    <div class="font-medium whitespace-nowrap">Samsung Q90 QLED TV</div>
-                                    <div class="text-slate-500 text-xs whitespace-nowrap">Electronic</div>
+                                    <div class="font-medium whitespace-nowrap capitalize">{{ $car->model }}</div>
+                                    <div class="text-slate-500 text-xs whitespace-nowrap">{{ $car->bodyType }}</div>
                                 </div>
                                 <div class="tabulator-col-resize-handle"></div>
                                 <div class="tabulator-col-resize-handle prev"></div>
@@ -220,25 +219,20 @@
                                 style="width: 238px; text-align: center; display: inline-flex; align-items: center; justify-content: center; height: 64px;"
                                 tabulator-field="images" title="">
                                 <div class="flex lg:justify-center">
-                                    <div class="intro-x w-10 h-10 image-fit">
-                                        <img alt="Midone - HTML Admin Template" class="rounded-full"
-                                            src="/dist/images/preview-10.jpg">
-                                    </div>
-                                    <div class="intro-x w-10 h-10 image-fit -ml-5">
-                                        <img alt="Midone - HTML Admin Template" class="rounded-full"
-                                            src="/dist/images/preview-4.jpg">
-                                    </div>
-                                    <div class="intro-x w-10 h-10 image-fit -ml-5">
-                                        <img alt="Midone - HTML Admin Template" class="rounded-full"
-                                            src="/dist/images/preview-5.jpg">
-                                    </div>
+                                    @foreach ($car->images as $image)
+                                        <div class="intro-x w-10 h-10 image-fit">
+                                            <img alt="Midone - HTML Admin Template" class="rounded-full"
+                                                src="{{ asset('storage/' . $image) }}">
+                                        </div>
+                                    @endforeach
+
                                 </div>
                                 <div class="tabulator-col-resize-handle"></div>
                                 <div class="tabulator-col-resize-handle prev"></div>
                             </div>
                             <div class="tabulator-cell" role="gridcell"
                                 style="width: 238px; text-align: center; display: inline-flex; align-items: center; justify-content: center; height: 64px;"
-                                tabulator-field="remaining_stock" title="">70<div
+                                tabulator-field="remaining_stock" title="">@convert($car->price)<div
                                     class="tabulator-col-resize-handle"></div>
                                 <div class="tabulator-col-resize-handle prev"></div>
                             </div>
@@ -291,44 +285,7 @@
                                 <div class="tabulator-col-resize-handle"></div>
                                 <div class="tabulator-col-resize-handle prev"></div>
                             </div>
-                            <div class="tabulator-cell" role="gridcell" tabulator-field="name"
-                                style="display: none; height: 64px;" title="">Samsung Q90 QLED TV<div
-                                    class="tabulator-col-resize-handle"></div>
-                                <div class="tabulator-col-resize-handle prev"></div>
-                            </div>
-                            <div class="tabulator-cell" role="gridcell" tabulator-field="category"
-                                style="display: none; height: 64px;" title="">Electronic<div
-                                    class="tabulator-col-resize-handle"></div>
-                                <div class="tabulator-col-resize-handle prev"></div>
-                            </div>
-                            <div class="tabulator-cell" role="gridcell" tabulator-field="remaining_stock"
-                                style="display: none; height: 64px;" title="">70<div
-                                    class="tabulator-col-resize-handle"></div>
-                                <div class="tabulator-col-resize-handle prev"></div>
-                            </div>
-                            <div class="tabulator-cell" role="gridcell" tabulator-field="status"
-                                style="display: none; height: 64px;" title="">0<div
-                                    class="tabulator-col-resize-handle"></div>
-                                <div class="tabulator-col-resize-handle prev"></div>
-                            </div>
-                            <div class="tabulator-cell" role="gridcell" tabulator-field="images"
-                                style="display: none; height: 64px;" title="">
-                                preview-10.jpg,preview-4.jpg,preview-5.jpg<div class="tabulator-col-resize-handle">
-                                </div>
-                                <div class="tabulator-col-resize-handle prev"></div>
-                            </div>
-                            <div class="tabulator-cell" role="gridcell" tabulator-field="images"
-                                style="display: none; height: 64px;" title="">
-                                preview-10.jpg,preview-4.jpg,preview-5.jpg<div class="tabulator-col-resize-handle">
-                                </div>
-                                <div class="tabulator-col-resize-handle prev"></div>
-                            </div>
-                            <div class="tabulator-cell" role="gridcell" tabulator-field="images"
-                                style="display: none; height: 64px;" title="">
-                                preview-10.jpg,preview-4.jpg,preview-5.jpg<div class="tabulator-col-resize-handle">
-                                </div>
-                                <div class="tabulator-col-resize-handle prev"></div>
-                            </div>
+                          
                             <div class="tabulator-responsive-collapse">
                                 <table>
                                     <tr>
@@ -374,26 +331,10 @@
                                 </table>
                             </div>
                         </div>
-                    </div>
+                    @endforeach
                 </div>
-            @endforeach
-            <div class="tabulator-footer"><span class="tabulator-paginator"><label>Page Size</label><select
-                        class="tabulator-page-size" aria-label="Page Size" title="Page Size">
-                        <option value="10">10</option>
-                        <option value="20">20</option>
-                        <option value="30">30</option>
-                        <option value="40">40</option>
-                    </select><button class="tabulator-page" type="button" role="button" aria-label="First Page"
-                        title="First Page" data-page="first" disabled="">First</button><button
-                        class="tabulator-page" type="button" role="button" aria-label="Prev Page"
-                        title="Prev Page" data-page="prev" disabled="">Prev</button><span
-                        class="tabulator-pages"><button class="tabulator-page active" type="button" role="button"
-                            aria-label="Show Page 1" title="Show Page 1" data-page="1">1</button><button
-                            class="tabulator-page" type="button" role="button" aria-label="Show Page 2"
-                            title="Show Page 2" data-page="2">2</button></span><button class="tabulator-page"
-                        type="button" role="button" aria-label="Next Page" title="Next Page"
-                        data-page="next">Next</button><button class="tabulator-page" type="button" role="button"
-                        aria-label="Last Page" title="Last Page" data-page="last">Last</button></span></div>
+            </div>
+
         </div>
     </div>
 </div>
