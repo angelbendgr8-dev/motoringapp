@@ -46,4 +46,11 @@ class Product extends Model
             set: fn ($value) => json_encode($value),
         );
     }
+
+
+    public function user()
+    {
+        return $this->belongsTo(User::class);
+    }
+
 }

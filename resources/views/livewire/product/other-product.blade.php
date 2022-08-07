@@ -106,95 +106,13 @@
                         <div class="tabulator-col-resize-handle"></div>
                         <div class="tabulator-col-resize-handle prev"></div>
                     </div>
-                    <div class="tabulator-col tabulator-sortable" role="columnheader" aria-sort="none"
-                        style="display: none; min-width: 40px; height: 44px;" tabulator-field="name" title="">
-                        <div class="tabulator-col-content">
-                            <div class="tabulator-col-title-holder">
-                                <div class="tabulator-col-title">PRODUCT NAME</div>
 
-                            </div>
-                        </div>
-                        <div class="tabulator-col-resize-handle"></div>
-                        <div class="tabulator-col-resize-handle prev"></div>
-                    </div>
-                    <div class="tabulator-col tabulator-sortable" role="columnheader" aria-sort="none"
-                        style="display: none; min-width: 40px; height: 44px;" tabulator-field="category"
-                        title="">
-                        <div class="tabulator-col-content">
-                            <div class="tabulator-col-title-holder">
-                                <div class="tabulator-col-title">CATEGORY</div>
-
-                            </div>
-                        </div>
-                        <div class="tabulator-col-resize-handle"></div>
-                        <div class="tabulator-col-resize-handle prev"></div>
-                    </div>
-                    <div class="tabulator-col tabulator-sortable" role="columnheader" aria-sort="none"
-                        style="display: none; min-width: 40px; height: 44px;" tabulator-field="remaining_stock"
-                        title="">
-                        <div class="tabulator-col-content">
-                            <div class="tabulator-col-title-holder">
-                                <div class="tabulator-col-title">REMAINING STOCK</div>
-
-                            </div>
-                        </div>
-                        <div class="tabulator-col-resize-handle"></div>
-                        <div class="tabulator-col-resize-handle prev"></div>
-                    </div>
-                    <div class="tabulator-col tabulator-sortable" role="columnheader" aria-sort="none"
-                        style="display: none; min-width: 40px; height: 44px;" tabulator-field="status"
-                        title="">
-                        <div class="tabulator-col-content">
-                            <div class="tabulator-col-title-holder">
-                                <div class="tabulator-col-title">STATUS</div>
-
-                            </div>
-                        </div>
-                        <div class="tabulator-col-resize-handle"></div>
-                        <div class="tabulator-col-resize-handle prev"></div>
-                    </div>
-                    <div class="tabulator-col tabulator-sortable" role="columnheader" aria-sort="none"
-                        style="display: none; min-width: 40px; height: 44px;" tabulator-field="images"
-                        title="">
-                        <div class="tabulator-col-content">
-                            <div class="tabulator-col-title-holder">
-                                <div class="tabulator-col-title">IMAGE 1</div>
-
-                            </div>
-                        </div>
-                        <div class="tabulator-col-resize-handle"></div>
-                        <div class="tabulator-col-resize-handle prev"></div>
-                    </div>
-                    <div class="tabulator-col tabulator-sortable" role="columnheader" aria-sort="none"
-                        style="display: none; min-width: 40px; height: 44px;" tabulator-field="images"
-                        title="">
-                        <div class="tabulator-col-content">
-                            <div class="tabulator-col-title-holder">
-                                <div class="tabulator-col-title">IMAGE 2</div>
-
-                            </div>
-                        </div>
-                        <div class="tabulator-col-resize-handle"></div>
-                        <div class="tabulator-col-resize-handle prev"></div>
-                    </div>
-                    <div class="tabulator-col tabulator-sortable" role="columnheader" aria-sort="none"
-                        style="display: none; min-width: 40px; height: 44px;" tabulator-field="images"
-                        title="">
-                        <div class="tabulator-col-content">
-                            <div class="tabulator-col-title-holder">
-                                <div class="tabulator-col-title">IMAGE 3</div>
-
-                            </div>
-                        </div>
-                        <div class="tabulator-col-resize-handle"></div>
-                        <div class="tabulator-col-resize-handle prev"></div>
-                    </div>
                 </div>
                 <div class="tabulator-frozen-rows-holder"></div>
             </div>
             <div class="tabulator-tableHolder" tabindex="0">
                 <div class="tabulator-table" style="padding-top: 0px; padding-bottom: 0px;">
-                    @foreach ($cars as $index => $car)
+                    @foreach ($products as $index => $product)
                         <div class="tabulator-row tabulator-selectable tabulator-row-{{ $index % 2 === 1 ? 'odd' : 'even' }}"
                             role="row" style="padding-left: 0px;">
                             <div class="tabulator-cell tabulator-row-handle" role="gridcell"
@@ -209,8 +127,8 @@
                                 style="width: 200px; display: inline-flex; align-items: center; height: 64px;"
                                 tabulator-field="name" title="">
                                 <div>
-                                    <div class="font-medium whitespace-nowrap capitalize">{{ $car->model }}</div>
-                                    <div class="text-slate-500 text-xs whitespace-nowrap">{{ $car->bodyType }}</div>
+                                    <div class="font-medium whitespace-nowrap capitalize">{{ $product->name }}</div>
+                                    {{--  <div class="text-slate-500 text-xs whitespace-nowrap">{{ $car->bodyType }}</div>  --}}
                                 </div>
                                 <div class="tabulator-col-resize-handle"></div>
                                 <div class="tabulator-col-resize-handle prev"></div>
@@ -219,7 +137,7 @@
                                 style="width: 238px; text-align: center; display: inline-flex; align-items: center; justify-content: center; height: 64px;"
                                 tabulator-field="images" title="">
                                 <div class="flex lg:justify-center">
-                                    @foreach ($car->images as $image)
+                                    @foreach ($product->images as $image)
                                         <div class="intro-x w-10 h-10 image-fit">
                                             <img alt="Midone - HTML Admin Template" class="rounded-full"
                                                 src="{{ asset('storage/' . $image) }}">
@@ -232,7 +150,7 @@
                             </div>
                             <div class="tabulator-cell" role="gridcell"
                                 style="width: 238px; text-align: center; display: inline-flex; align-items: center; justify-content: center; height: 64px;"
-                                tabulator-field="remaining_stock" title="">@convert($car->price)<div
+                                tabulator-field="remaining_stock" title="">@convert($product->price)<div
                                     class="tabulator-col-resize-handle"></div>
                                 <div class="tabulator-col-resize-handle prev"></div>
                             </div>
@@ -255,7 +173,7 @@
                                 style="width: 201px; text-align: center; display: none; align-items: center; justify-content: center; height: 64px;"
                                 tabulator-field="actions" title="">
                                 <div class="flex lg:justify-center items-center">
-                                    <a href="{{route('admin.edit.product',$car->id)}}" class="edit flex items-center mr-3" href="javascript:;">
+                                    <a href="{{route('admin.edit.other_product',$product->id)}}" class="edit flex items-center mr-3" href="javascript:;">
                                         <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24"
                                             viewBox="0 0 24 24" fill="none" stroke="currentColor"
                                             stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
@@ -293,7 +211,7 @@
                                         <td>
                                             <div>
                                                 <div class="flex lg:justify-center items-center">
-                                                    <a  href="{{route('admin.edit.product',$car->id)}}" class="edit flex items-center mr-3" href="javascript:;">
+                                                    <a  href="{{route('admin.edit.other_product',$product->id)}}" class="edit flex items-center mr-3" href="javascript:;">
                                                         <svg xmlns="http://www.w3.org/2000/svg" width="24"
                                                             height="24" viewBox="0 0 24 24" fill="none"
                                                             stroke="currentColor" stroke-width="2"
