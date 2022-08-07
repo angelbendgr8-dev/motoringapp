@@ -26,7 +26,7 @@ Route::middleware('auth:sanctum')->group(function () {
 
     Route::controller(ProductController::class)->group(function () {
         Route::post('users/add/product', 'addProduct');
-        Route::post('users/add/product', 'addProduct');
+        Route::post('users/add/other/product', 'addOtherProduct');
 
     });
 });
