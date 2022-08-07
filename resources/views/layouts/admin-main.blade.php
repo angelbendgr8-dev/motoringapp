@@ -22,8 +22,8 @@ License: You must have a valid license purchased only from themeforest(the above
     <meta name="author" content="LEFT4CODE">
     <title>Dashboard - Midone - Tailwind HTML Admin Template</title>
     <!-- BEGIN: CSS Assets-->
-    <link rel="stylesheet" href="{{ asset('css/app.css') }}" />
     @vite('resources/css/app.css')
+    <link rel="stylesheet" href="{{ asset('css/app.css') }}" />
     @livewireStyles
     <script defer src="https://unpkg.com/alpinejs@3.x.x/dist/cdn.min.js"></script>
 
@@ -753,13 +753,13 @@ License: You must have a valid license purchased only from themeforest(the above
                         <li>
                             <a href="side-menu-light-dashboard-overview-1.html" class="side-menu">
                                 <div class="side-menu__icon"> <i data-lucide="plus-square"></i> </div>
-                                <div class="side-menu__title">Add Products</div>
+                                <div class="side-menu__title">Spare Parts</div>
                             </a>
                         </li>
                         <li>
-                            <a href="simple-menu-light-dashboard-overview-1.html" class="side-menu">
+                            <a href="{{route('admin.manage.product')}}" class="side-menu">
                                 <div class="side-menu__icon"> <i data-lucide="activity"></i> </div>
-                                <div class="side-menu__title"> Manage Products </div>
+                                <div class="side-menu__title">Cars </div>
                             </a>
                         </li>
 
