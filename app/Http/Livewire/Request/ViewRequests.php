@@ -21,7 +21,7 @@ class ViewRequests extends Component
     }
     public function getRequests()
     {
-        return ServiceRequest::latest()->paginate(10);
+        return ServiceRequest::with('service')->paginate(10);
     }
     public function render()
     {

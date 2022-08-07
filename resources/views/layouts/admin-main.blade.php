@@ -62,13 +62,13 @@ License: You must have a valid license purchased only from themeforest(the above
                     </a>
                     <ul class="">
                         <li>
-                            <a href="side-menu-light-dashboard-overview-1.html" class="menu menu--active">
+                            <a href="{{route('admin.add.services')}}" class="menu menu--active">
                                 <div class="menu__icon"> <i data-lucide="activity"></i> </div>
                                 <div class="menu__title"> Add Services </div>
                             </a>
                         </li>
                         <li>
-                            <a href="simple-menu-light-dashboard-overview-1.html" class="menu menu--active">
+                            <a href="{{route('admin.manage.services')}}" class="menu menu--active">
                                 <div class="menu__icon"> <i data-lucide="activity"></i> </div>
                                 <div class="menu__title"> Manage Services </div>
                             </a>
@@ -84,13 +84,13 @@ License: You must have a valid license purchased only from themeforest(the above
                     </a>
                     <ul class="">
                         <li>
-                            <a href="side-menu-light-categories.html" class="menu">
+                            <a href="{{route('admin.manage.product')}}" class="menu">
                                 <div class="menu__icon"> <i data-lucide="activity"></i> </div>
                                 <div class="menu__title"> Spare Parts </div>
                             </a>
                         </li>
                         <li>
-                            <a href="side-menu-light-add-product.html" class="menu">
+                            <a href="{{route('admin.manage.other_product')}}" class="menu">
                                 <div class="menu__icon"> <i data-lucide="activity"></i> </div>
                                 <div class="menu__title"> Cars </div>
                             </a>
@@ -106,15 +106,15 @@ License: You must have a valid license purchased only from themeforest(the above
                     </a>
                     <ul class="">
                         <li>
-                            <a href="side-menu-light-categories.html" class="menu">
+                            <a href="{{route('admin.manage.requests')}}" class="menu">
                                 <div class="menu__icon"> <i data-lucide="activity"></i> </div>
-                                <div class="menu__title"> Spare Parts </div>
+                                <div class="menu__title"> Service Requests </div>
                             </a>
                         </li>
                         <li>
-                            <a href="side-menu-light-add-product.html" class="menu">
+                            <a href="#" class="menu">
                                 <div class="menu__icon"> <i data-lucide="activity"></i> </div>
-                                <div class="menu__title"> Cars </div>
+                                <div class="menu__title"> Innformation Request </div>
                             </a>
                         </li>
 
@@ -259,7 +259,7 @@ License: You must have a valid license purchased only from themeforest(the above
                     </a>
                     <ul class="">
                         <li>
-                            <a href="#" class="side-menu">
+                            <a href="{{route('admin.manage.requests')}}" class="side-menu">
                                 <div class="side-menu__icon"> <i data-lucide="truck"></i> </div>
                                 <div class="side-menu__title">Service Request</div>
                             </a>

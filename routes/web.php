@@ -12,6 +12,8 @@ use App\Http\Livewire\Product\EditOtherProduct;
 use App\Http\Livewire\Product\EditProduct;
 use App\Http\Livewire\Product\OtherProduct;
 use App\Http\Livewire\Product\Product;
+use App\Http\Livewire\Request\EditRequest;
+use App\Http\Livewire\Request\ViewRequests;
 use App\Http\Livewire\ServiceLocation\AddLocation;
 use App\Http\Livewire\ServiceLocation\EditLocation;
 use App\Http\Livewire\ServiceLocation\ViewLocations;
@@ -65,6 +67,11 @@ Route::middleware(['auth', 'user-access:admin'])->group(function () {
     Route::get('/admin/other/products', OtherProduct::class)->name('admin.manage.other_product');
     Route::get('/admin/edit/product/{id}', EditProduct::class)->name('admin.edit.product');
     Route::get('/admin/edit/other/product/{id}', EditOtherProduct::class)->name('admin.edit.other_product');
+
+
+    //Services Request
+    Route::get('/admin/requests', ViewRequests::class)->name('admin.manage.requests');
+    Route::get('/admin/edit/request/{id}', EditRequest::class)->name('admin.edit.request');
 });
 
 // require __DIR__ . '/auth.php';

@@ -11,4 +11,14 @@ class Services extends Model
     protected $fillable = [
         'name','description','picture','process','assurance','others'
     ];
+
+    /**
+     * Get all of the request for the Services
+     *
+     * @return \Illuminate\Database\Eloquent\Relations\HasMany
+     */
+    public function request()
+    {
+        return $this->hasMany(ServiceRequest::class);
+    }
 }

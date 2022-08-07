@@ -80,4 +80,13 @@ class User extends Authenticatable
     {
         return $this->hasMany(OtherProduct::class);
     }
+    /**
+     * Get all of the requests for the User
+     *
+     * @return \Illuminate\Database\Eloquent\Relations\HasMany
+     */
+    public function requests()
+    {
+        return $this->hasMany(ServiceRequest::class);
+    }
 }
