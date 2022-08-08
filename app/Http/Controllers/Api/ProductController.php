@@ -63,4 +63,14 @@ class ProductController extends ResponseController
             return $this->sendError('Unable to upload Product', $th);
         }
     }
+
+    public function getCars(Request $request)
+    {
+        $cars = Product::whereStatus('success')->get();
+
+        return $this->sendResponse($cars, 'Products fetched successfully.');
+
+
+
+    }
 }

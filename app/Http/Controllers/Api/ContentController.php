@@ -2,15 +2,16 @@
 
 namespace App\Http\Controllers\Api;
 
-use App\Http\Controllers\Controller;
-use App\Http\Controllers\ResponseController;
-use App\Http\Resources\BrandResource;
+use App\Models\Product;
 use App\Models\CarBrand;
 use App\Models\Category;
-use App\Models\ServiceLocation;
 use App\Models\Services;
 use Illuminate\Http\Request;
+use App\Models\ServiceLocation;
 use Illuminate\Support\Facades\DB;
+use App\Http\Controllers\Controller;
+use App\Http\Resources\BrandResource;
+use App\Http\Controllers\ResponseController;
 
 class ContentController extends ResponseController
 {
@@ -40,8 +41,5 @@ class ContentController extends ResponseController
         $brands = CarBrand::whereCategoryId($maker->id)->get();
         return $this->sendResponse($brands, 'brands fetched successfully.');
     }
-    public function getProduct(Request $request)
-    {
-
-    }
+   
 }

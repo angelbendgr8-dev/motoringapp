@@ -1,47 +1,157 @@
-<div class="intro-y box px-5 pt-5 mt-5">
-    <div class="flex flex-col lg:flex-row border-b border-slate-200/60 dark:border-darkmode-400 pb-5 -mx-5">
-        <div class="flex flex-1 px-5 items-center justify-center lg:justify-start">
-            <div class="w-20 h-20 sm:w-24 sm:h-24 flex-none lg:w-32 lg:h-32 image-fit relative">
-                <img alt="Midone - HTML Admin Template" class="rounded-full" src="dist/images/profile-5.jpg">
-                <div class="absolute mb-1 mr-1 flex items-center justify-center bottom-0 right-0 bg-primary rounded-full p-2"> <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" icon-name="camera" class="lucide lucide-camera w-4 h-4 text-white" data-lucide="camera"><path d="M14.5 4h-5L7 7H4a2 2 0 00-2 2v9a2 2 0 002 2h16a2 2 0 002-2V9a2 2 0 00-2-2h-3l-2.5-3z"></path><circle cx="12" cy="13" r="3"></circle></svg> </div>
+<div class="intro-y  ">
+    <div class="mx-auto py-12 w-[100%] md:w-[50%] ">
+
+
+
+        <div class="box p-5 rounded-md mt-5">
+            <div class="flex items-center border-b border-slate-200/60 dark:border-darkmode-400 pb-5 mb-5">
+                <div class="font-medium text-base truncate">Service Details</div>
+
             </div>
-            <div class="ml-5">
-                <div class="w-24 sm:w-40 truncate sm:whitespace-normal font-medium text-lg">Denzel Washington</div>
-                <div class="text-slate-500">Frontend Engineer</div>
+            <div class="flex items-center mt-3">
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
+                    stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+                    icon-name="clipboard" data-lucide="map-pin"
+                    class="lucide lucide-map-pin w-4 h-4 text-slate-500 mr-2">
+                    <path d="M16 4h2a2 2 0 012 2v14a2 2 0 01-2 2H6a2 2 0 01-2-2V6a2 2 0 012-2h2"></path>
+                    <rect x="8" y="2" width="8" height="4" rx="1" ry="1">
+                    </rect>
+                </svg> Address
+                <div class="ml-auto">{{ $request->address }}</div>
             </div>
+            <div class="flex items-center mt-3">
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
+                    stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+                    icon-name="map-pin" data-lucide="map-pin" class="lucide lucide-map-pin w-4 h-4 text-slate-500 mr-2">
+                    <path d="M16 4h2a2 2 0 012 2v14a2 2 0 01-2 2H6a2 2 0 01-2-2V6a2 2 0 012-2h2"></path>
+                    <rect x="8" y="2" width="8" height="4" rx="1" ry="1">
+                    </rect>
+                </svg> State:
+                <div class="ml-auto">{{ $request->state }}</div>
+            </div>
+            <div class="flex items-center mt-3">
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
+                    stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+                    icon-name="map-pin" data-lucide="map-pin"
+                    class="lucide lucide-clipboard w-4 h-4 text-slate-500 mr-2">
+                    <path d="M16 4h2a2 2 0 012 2v14a2 2 0 01-2 2H6a2 2 0 01-2-2V6a2 2 0 012-2h2"></path>
+                    <rect x="8" y="2" width="8" height="4" rx="1" ry="1">
+                    </rect>
+                </svg> Area:
+                <div class="ml-auto">{{ $request->area }}</div>
+            </div>
+            <div class="flex items-center mt-3">
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
+                    stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+                    icon-name="map-pin" data-lucide="mail" class="lucide lucide-clipboard w-4 h-4 text-slate-500 mr-2">
+                    <path d="M16 4h2a2 2 0 012 2v14a2 2 0 01-2 2H6a2 2 0 01-2-2V6a2 2 0 012-2h2"></path>
+                    <rect x="8" y="2" width="8" height="4" rx="1" ry="1">
+                    </rect>
+                </svg> Contact Email:
+                <div class="ml-auto">{{ $request->email }}</div>
+            </div>
+            <div class="flex items-center mt-3">
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
+                    stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+                    icon-name="map-pin" data-lucide="phone"
+                    class="lucide lucide-clipboard w-4 h-4 text-slate-500 mr-2">
+                    <path d="M16 4h2a2 2 0 012 2v14a2 2 0 01-2 2H6a2 2 0 01-2-2V6a2 2 0 012-2h2"></path>
+                    <rect x="8" y="2" width="8" height="4" rx="1"
+                        ry="1">
+                    </rect>
+                </svg> Mobile Number:
+                <div class="ml-auto">{{ $request->phone_number }}</div>
+            </div>
+            <div class="flex items-center mt-3">
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
+                    fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                    stroke-linejoin="round" icon-name="map-pin" data-lucide="cog"
+                    class="lucide lucide-clipboard w-4 h-4 text-slate-500 mr-2">
+                    <path d="M16 4h2a2 2 0 012 2v14a2 2 0 01-2 2H6a2 2 0 01-2-2V6a2 2 0 012-2h2"></path>
+                    <rect x="8" y="2" width="8" height="4" rx="1"
+                        ry="1">
+                    </rect>
+                </svg> Service Name:
+                <div class="ml-auto">{{ $request->service->name }}</div>
+            </div>
+            <div class="flex items-center mt-3">
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
+                    fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                    stroke-linejoin="round" icon-name="map-pin" data-lucide="cpu"
+                    class="lucide lucide-clipboard w-4 h-4 text-slate-500 mr-2">
+                    <path d="M16 4h2a2 2 0 012 2v14a2 2 0 01-2 2H6a2 2 0 01-2-2V6a2 2 0 012-2h2"></path>
+                    <rect x="8" y="2" width="8" height="4" rx="1"
+                        ry="1">
+                    </rect>
+                </svg> Delivery Mode:
+                <div class="ml-auto">{{ $request->type }}</div>
+            </div>
+
+
+            <div class="flex items-center mt-3">
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
+                    fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                    stroke-linejoin="round" icon-name="star" data-lucide="clock"
+                    class="lucide lucide-star w-4 h-4 text-slate-500 mr-2">
+                    <polygon
+                        points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2">
+                    </polygon>
+                </svg> Date:
+                <div class="ml-auto">{{ \Carbon\Carbon::parse($request->date)->format('d D,M Y') }}</div>
+            </div>
+            <div class="flex items-center mt-3">
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
+                    fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                    stroke-linejoin="round" icon-name="star" data-lucide="info"
+                    class="lucide lucide-star w-4 h-4 text-slate-500 mr-2">
+                    <polygon
+                        points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2">
+                    </polygon>
+                </svg> Status:
+                {{--  @dd($request->status)  --}}
+                @if ($request->status === 'pending')
+                    <div class="bg-warning/20 text-warning rounded px-2 ml-1">
+                        {{ $request->status }}</div>
+                @elseif ($request->status === 'cancelled')
+                    <div class="bg-red-100 text-red-300 rounded px-2 ml-1">
+                        {{ $request->status }}</div>
+                @elseif ($request->status === 'inprogress')
+                    <div class="bg-blue-600  text-blue-200 rounded px-2 ml-1">
+                        {{ $request->status }}</div>
+                @else
+                    <div class="bg-success/20 text-successrounded px-2 ml-1">
+                        {{ $request->status }}</div>
+                @endif
+
+
+
+
+
+            </div>
+
+            <div class=" border-t border-slate-200/60 mt-6">
+                <label for="regular-form-1" class="form-label">Status</label>
+                <select wire:model='request.status'
+                    class="py-2 form-control border-1 rounded-md border-slate-200 @error('request') border-red-300 @enderror">
+                    <option selected> Status</option>
+                    <option value="completed">Completed</option>
+                    <option value="inprogress">Inprogress</option>
+                    <option value="cancelled">Cancelle</option>
+
+                </select>
+                @error('request')
+                    <div class="text-xs bg-red-100">{{ $message }}</div>
+                @enderror
+            </div>
+
+            <div class="flex items-center dark:border-darkmode-400 pt-5 mt-5 font-medium">
+                <a href="#" wire:click='changeStatus' type="button"
+                    class="btn btn-outline-secondary w-full py-1 px-2">Change Status</a>
+            </div>
+
         </div>
-        <div class="mt-6 lg:mt-0 flex-1 px-5 border-l border-r border-slate-200/60 dark:border-darkmode-400 border-t lg:border-t-0 pt-5 lg:pt-0">
-            <div class="font-medium text-center lg:text-left lg:mt-3">Contact Details</div>
-            <div class="flex flex-col justify-center items-center lg:items-start mt-4">
-                <div class="truncate sm:whitespace-normal flex items-center"> <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" icon-name="mail" data-lucide="mail" class="lucide lucide-mail w-4 h-4 mr-2"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path><polyline points="22,6 12,13 2,6"></polyline></svg> denzelwashington@left4code.com </div>
-                <div class="truncate sm:whitespace-normal flex items-center mt-3"> <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" icon-name="instagram" data-lucide="instagram" class="lucide lucide-instagram w-4 h-4 mr-2"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect><path d="M16 11.37A4 4 0 1112.63 8 4 4 0 0116 11.37z"></path><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line></svg> Instagram Denzel Washington </div>
-                <div class="truncate sm:whitespace-normal flex items-center mt-3"> <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" icon-name="twitter" data-lucide="twitter" class="lucide lucide-twitter w-4 h-4 mr-2"><path d="M23 3a10.9 10.9 0 01-3.14 1.53 4.48 4.48 0 00-7.86 3v1A10.66 10.66 0 013 4s-4 9 5 13a11.64 11.64 0 01-7 2c9 5 20 0 20-11.5 0-.28-.03-.56-.08-.83A7.72 7.72 0 0023 3z"></path></svg> Twitter Denzel Washington </div>
-            </div>
-        </div>
-        <div class="mt-6 lg:mt-0 flex-1 px-5 border-t lg:border-0 border-slate-200/60 dark:border-darkmode-400 pt-5 lg:pt-0">
-            <div class="font-medium text-center lg:text-left lg:mt-5">Sales Growth</div>
-            <div class="flex items-center justify-center lg:justify-start mt-2">
-                <div class="mr-2 w-20 flex"> USP: <span class="ml-3 font-medium text-success">+23%</span> </div>
-                <div class="w-3/4">
-                    <div class="h-[55px]">
-                        <canvas class="simple-line-chart-1 -mr-5" style="display: block; box-sizing: border-box; height: 55px; width: 284px;" width="284" height="55"></canvas>
-                    </div>
-                </div>
-            </div>
-            <div class="flex items-center justify-center lg:justify-start">
-                <div class="mr-2 w-20 flex"> STP: <span class="ml-3 font-medium text-danger">-2%</span> </div>
-                <div class="w-3/4">
-                    <div class="h-[55px]">
-                        <canvas class="simple-line-chart-2 -mr-5" style="display: block; box-sizing: border-box; height: 55px; width: 284px;" width="284" height="55"></canvas>
-                    </div>
-                </div>
-            </div>
-        </div>
+
     </div>
-    <ul class="nav nav-link-tabs flex-col sm:flex-row justify-center lg:justify-start text-center" role="tablist">
-        <li id="dashboard-tab" class="nav-item" role="presentation"> <a href="javascript:;" class="nav-link py-4" data-tw-target="#dashboard" aria-controls="dashboard" aria-selected="false" role="tab"> Dashboard </a> </li>
-        <li id="account-and-profile-tab" class="nav-item" role="presentation"> <a href="javascript:;" class="nav-link py-4 active" data-tw-target="#account-and-profile" aria-selected="true" role="tab"> Account &amp; Profile </a> </li>
-        <li id="activities-tab" class="nav-item" role="presentation"> <a href="javascript:;" class="nav-link py-4" data-tw-target="#activities" aria-selected="false" role="tab"> Activities </a> </li>
-        <li id="tasks-tab" class="nav-item" role="presentation"> <a href="javascript:;" class="nav-link py-4" data-tw-target="#tasks" aria-selected="false" role="tab"> Tasks </a> </li>
-    </ul>
+
+
 </div>

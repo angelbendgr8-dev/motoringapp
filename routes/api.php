@@ -47,4 +47,9 @@ Route::controller(ContentController::class)->group(function () {
     Route::get('content/categories', 'getCategories');
     Route::get('content/brands/{id}', 'getBrandById');
     Route::get('content/car/brands', 'getBrands');
+    Route::get('/products/cars','getCars');
+});
+Route::controller(ProductController::class)->group(function () {
+   
+    Route::get('/products/cars','getCars');
 });

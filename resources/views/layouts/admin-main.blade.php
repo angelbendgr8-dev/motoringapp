@@ -150,15 +150,21 @@ License: You must have a valid license purchased only from themeforest(the above
                     </a>
                     <ul class="">
                         <li>
-                            <a href="side-menu-light-categories.html" class="menu">
+                            <a href="{{route('admin.manage.categories')}}" class="menu">
                                 <div class="menu__icon"> <i data-lucide="activity"></i> </div>
-                                <div class="menu__title"> Spare Parts </div>
+                                <div class="menu__title"> Market place </div>
                             </a>
                         </li>
                         <li>
-                            <a href="side-menu-light-add-product.html" class="menu">
+                            <a href="{{route('admin.manage.locations')}}" class="menu">
                                 <div class="menu__icon"> <i data-lucide="activity"></i> </div>
-                                <div class="menu__title"> Cars </div>
+                                <div class="menu__title"> Location </div>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="{{route('admin.view.brands')}}" class="menu">
+                                <div class="menu__icon"> <i data-lucide="activity"></i> </div>
+                                <div class="menu__title"> Car Brands </div>
                             </a>
                         </li>
 
