@@ -50,6 +50,7 @@ Route::controller(ContentController::class)->group(function () {
     Route::get('/products/cars','getCars');
 });
 Route::controller(ProductController::class)->group(function () {
-   
+
     Route::get('/products/cars','getCars');
+    Route::get('/products/parts','getParts');
 });

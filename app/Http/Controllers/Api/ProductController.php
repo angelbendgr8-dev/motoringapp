@@ -64,9 +64,18 @@ class ProductController extends ResponseController
         }
     }
 
-    public function getCars(Request $request)
+    public function getCars()
     {
-        $cars = Product::whereStatus('success')->get();
+        $cars = Product::all();
+
+        return $this->sendResponse($cars, 'Products fetched successfully.');
+
+
+
+    }
+    public function getParts()
+    {
+        $cars = Product::all();
 
         return $this->sendResponse($cars, 'Products fetched successfully.');
 

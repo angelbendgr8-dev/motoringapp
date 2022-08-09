@@ -16,7 +16,7 @@ return new class extends Migration
         Schema::table('users', function (Blueprint $table) {
             $table->string('country')->default('NG');
             $table->string('mobile_number')->nullable();
-            $table->string('code');
+            $table->string('code')->nullable();
         });
     }
 
