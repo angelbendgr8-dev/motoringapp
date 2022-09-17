@@ -55,7 +55,7 @@ class ProductController extends ResponseController
             }
             $input = $request->except(['images', 'date']);
             $input['date'] = new Carbon($request->date);
-            $input['images'] = json_encode($images);
+            $input['images'] = $images;
 
             OtherProduct::create($input);
             return $this->sendResponse($input, 'Product uploaded successfully');
@@ -75,7 +75,7 @@ class ProductController extends ResponseController
     }
     public function getParts()
     {
-        $cars = Product::all();
+        $cars = OtherProduct::all();
 
         return $this->sendResponse($cars, 'Products fetched successfully.');
 
