@@ -29,7 +29,7 @@ class ProductController extends ResponseController
             }
             $input = $request->except(['images', 'date']);
             $input['date'] = new Carbon($request->date);
-            $input['images'] = json_encode($images);
+            $input['images'] = $images;
 
             Product::create($input);
             return $this->sendResponse($input, 'Product Uploaded successfully');
@@ -41,7 +41,7 @@ class ProductController extends ResponseController
     {
         // return $this->sendError('Unable to upload image', []);
         // return $this->sendResponse($request->images, 'Entered here');
-
+        
         try {
             $images = [];
             if ($request->file('images')) {
