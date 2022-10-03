@@ -1,13 +1,4 @@
 <!DOCTYPE html>
-<!--
-Template Name: Tinker - HTML Admin Dashboard Template
-Author: Left4code
-Website: http://www.left4code.com/
-Contact: muhammadrizki@left4code.com
-Purchase: https://themeforest.net/user/left4code/portfolio
-Renew Support: https://themeforest.net/user/left4code/portfolio
-License: You must have a valid license purchased only from themeforest(the above link) in order to legally use the theme for your project.
--->
 <html lang="en" class="light">
 <!-- BEGIN: Head -->
 
@@ -22,7 +13,8 @@ License: You must have a valid license purchased only from themeforest(the above
     <meta name="author" content="LEFT4CODE">
     <title>Dashboard - Midone - Tailwind HTML Admin Template</title>
     <!-- BEGIN: CSS Assets-->
-    @vite('resources/css/app.css')
+    {{--  @vite('resources/css/app.css')  --}}
+    <link rel="stylesheet" href="{{asset('css/app.8df02171.css')}}">
     <link rel="stylesheet" href="{{ asset('css/app.css') }}" />
     @livewireStyles
     <script defer src="https://unpkg.com/alpinejs@3.x.x/dist/cdn.min.js"></script>
@@ -443,6 +435,7 @@ License: You must have a valid license purchased only from themeforest(the above
     </script>
     <script src="https://maps.googleapis.com/maps/api/js?key=[" your-google-map-api"]&libraries=places"></script>
     <script src="{{ asset('js/app.js') }}"></script>
+    <script src="{{ asset('js/app.a1dd5ee6.js') }}"></script>
     @livewireScripts
     <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
 
