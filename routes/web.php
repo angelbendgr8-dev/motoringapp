@@ -1,25 +1,26 @@
 <?php
 
+use App\Http\Livewire\Login;
+use App\Http\Livewire\Dashboard;
+use Illuminate\Support\Facades\Route;
+use App\Http\Livewire\Product\Product;
+use Illuminate\Support\Facades\Artisan;
 use App\Http\Livewire\CarBrand\AddBrand;
 use App\Http\Livewire\CarBrand\ViewBrands;
-use App\Http\Livewire\Dashboard;
-use App\Http\Livewire\Login;
+use App\Http\Livewire\Product\EditProduct;
+use App\Http\Livewire\Request\EditRequest;
 use App\Http\Livewire\Services\AddService;
 use App\Http\Livewire\Category\AddCategory;
+use App\Http\Livewire\Product\OtherProduct;
+use App\Http\Livewire\Request\ViewRequests;
+use App\Http\Livewire\Services\EditService;
 use App\Http\Livewire\Category\EditCategory;
 use App\Http\Livewire\Category\ViewCategory;
+use App\Http\Livewire\Services\ManageServices;
 use App\Http\Livewire\Product\EditOtherProduct;
-use App\Http\Livewire\Product\EditProduct;
-use App\Http\Livewire\Product\OtherProduct;
-use App\Http\Livewire\Product\Product;
-use App\Http\Livewire\Request\EditRequest;
-use App\Http\Livewire\Request\ViewRequests;
 use App\Http\Livewire\ServiceLocation\AddLocation;
 use App\Http\Livewire\ServiceLocation\EditLocation;
 use App\Http\Livewire\ServiceLocation\ViewLocations;
-use App\Http\Livewire\Services\EditService;
-use App\Http\Livewire\Services\ManageServices;
-use Illuminate\Support\Facades\Route;
 
 /*
 |--------------------------------------------------------------------------
@@ -31,9 +32,8 @@ use Illuminate\Support\Facades\Route;
 | contains the "web" middleware group. Now create something great!
 |
 */
-
-Route::get('/', function () {
-    return view('welcome');
+Route::get('/link', function () {
+    Artisan::call('storage:link');
 });
 Route::get('/admin-login', Login::class)->name('admin.login');
 
