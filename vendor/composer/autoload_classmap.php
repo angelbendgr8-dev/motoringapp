@@ -61,6 +61,7 @@ return array(
     'App\\Http\\Resources\\BrandResource' => $baseDir . '/app/Http/Resources/BrandResource.php',
     'App\\Models\\CarBrand' => $baseDir . '/app/Models/CarBrand.php',
     'App\\Models\\CarDiscription' => $baseDir . '/app/Models/CarDiscription.php',
+    'App\\Models\\CarInspection' => $baseDir . '/app/Models/CarInspection.php',
     'App\\Models\\CarMaker' => $baseDir . '/app/Models/CarMaker.php',
     'App\\Models\\CarModel' => $baseDir . '/app/Models/CarModel.php',
     'App\\Models\\Category' => $baseDir . '/app/Models/Category.php',

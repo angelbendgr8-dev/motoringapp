@@ -585,6 +585,7 @@ class ComposerStaticInit16f9ec616cd22c869e6d957fa8654f43
         'App\\Http\\Resources\\BrandResource' => __DIR__ . '/../..' . '/app/Http/Resources/BrandResource.php',
         'App\\Models\\CarBrand' => __DIR__ . '/../..' . '/app/Models/CarBrand.php',
         'App\\Models\\CarDiscription' => __DIR__ . '/../..' . '/app/Models/CarDiscription.php',
+        'App\\Models\\CarInspection' => __DIR__ . '/../..' . '/app/Models/CarInspection.php',
         'App\\Models\\CarMaker' => __DIR__ . '/../..' . '/app/Models/CarMaker.php',
         'App\\Models\\CarModel' => __DIR__ . '/../..' . '/app/Models/CarModel.php',
         'App\\Models\\Category' => __DIR__ . '/../..' . '/app/Models/Category.php',

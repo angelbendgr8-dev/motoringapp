@@ -4,10 +4,13 @@ namespace App\Http\Controllers\Api;
 
 use Carbon\Carbon;
 use App\Models\Product;
+use App\Models\OtherProduct;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
+use Illuminate\Support\Facades\Validator;
 use App\Http\Controllers\ResponseController;
-use App\Models\OtherProduct;
+use App\Models\CarInspection;
+use App\Models\Order;
 
 class ProductController extends ResponseController
 {
@@ -41,7 +44,7 @@ class ProductController extends ResponseController
     {
         // return $this->sendError('Unable to upload image', []);
         // return $this->sendResponse($request->images, 'Entered here');
-        
+
         try {
             $images = [];
             if ($request->file('images')) {
@@ -81,5 +84,39 @@ class ProductController extends ResponseController
 
 
 
+    }
+    public function orderPart(Request $request)
+    {
+        $validator = Validator::make($request->all(), [
+            'name' => 'required',
+            'state' => 'required',
+            'city' => 'required',
+            'mobile_number' => 'required',
+            'user_id' => 'required',
+            'product_id' => 'required',
+            'type' => 'required',
+        ]);
+
+        if ($validator->fails()) {
+            return $this->sendError('Validation Error.', $validator->errors());
+        }
+        $input = $request->all();
+        Order::create($input);
+        return $this->sendResponse($input, 'Order made successfully');
+    }
+    public function inspectCar(Request $request)
+    {
+        $validator = Validator::make($request->all(), [
+
+            'user_id' => 'required',
+            'car_id' => 'required',
+        ]);
+
+        if ($validator->fails()) {
+            return $this->sendError('Validation Error.', $validator->errors());
+        }
+        $input = $request->all();
+        CarInspection::create($input);
+        return $this->sendResponse($input, 'Car Inspection submitted successfully');
     }
 }

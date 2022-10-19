@@ -53,4 +53,6 @@ Route::controller(ProductController::class)->group(function () {
 
     Route::get('/products/cars','getCars');
     Route::get('/products/parts','getParts');
+    Route::post('/order/parts','orderPart');
+    Route::post('/book/inspection','inspectCar');
 });

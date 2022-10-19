@@ -1,13 +1,5 @@
 <!DOCTYPE html>
-<!--
-Template Name: Tinker - HTML Admin Dashboard Template
-Author: Left4code
-Website: http://www.left4code.com/
-Contact: muhammadrizki@left4code.com
-Purchase: https://themeforest.net/user/left4code/portfolio
-Renew Support: https://themeforest.net/user/left4code/portfolio
-License: You must have a valid license purchased only from themeforest(the above link) in order to legally use the theme for your project.
--->
+
 <html lang="en" class="light">
     <!-- BEGIN: Head -->
     <head>
@@ -19,7 +11,8 @@ License: You must have a valid license purchased only from themeforest(the above
         <meta name="author" content="LEFT4CODE">
         <title>MotoringHub Admin Login</title>
         <!-- BEGIN: CSS Assets-->
-        @vite('resources/css/app.css')
+        {{--  @vite('resources/css/app.css')  --}}
+        <link rel="stylesheet" href="{{asset('css/app.8df02171.css')}}" />
         <link rel="stylesheet" href="{{asset('css/app.css')}}" />
         @livewireStyles
         <!-- END: CSS Assets-->
@@ -32,6 +25,7 @@ License: You must have a valid license purchased only from themeforest(the above
         <!-- END: Dark Mode Switcher-->
 
         <!-- BEGIN: JS Assets-->
+        <script src="{{asset('css/app.a1dd5ee6.js')}}"></script>
         <script src="{{asset('js/app.js')}}"></script>
         @livewireScripts
         <!-- END: JS Assets-->
