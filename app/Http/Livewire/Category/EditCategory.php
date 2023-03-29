@@ -28,13 +28,17 @@ class EditCategory extends Component
 
         $validatedData = $this->validate();
         if($this->picture){
+           
             $this->deleteOldPicture($this->picture);
             $this->category->picture = $this->picture->store('categories','public');
+            $this->category->save();
+        }else{
+
+            $this->category->save();
         }
 
 
 
-        $this->category->save();
         $this->alert('success', 'Category Updated Successfully');
         return redirect(route('admin.manage.categories'));
 

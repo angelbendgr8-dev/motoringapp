@@ -6,15 +6,13 @@
     <meta charset="utf-8">
     <link href="dist/images/logo.svg" rel="shortcut icon">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta name="description"
-        content="Tinker admin is super flexible, powerful, clean & modern responsive tailwind admin template with unlimited possibilities.">
-    <meta name="keywords"
-        content="admin template, Tinker Admin Template, dashboard template, flat admin template, responsive admin template, web app">
-    <meta name="author" content="LEFT4CODE">
-    <title>Dashboard - Midone - Tailwind HTML Admin Template</title>
+    <meta name="description" content="Motoring App admin.">
+    <meta name="keywords" content="Motoring App Admin">
+    <meta name="author" content="Angelben">
+    <title>Dashboard - Motoring app - Tailwind HTML Admin Template</title>
     <!-- BEGIN: CSS Assets-->
     {{--  @vite('resources/css/app.css')  --}}
-    <link rel="stylesheet" href="{{asset('css/app.8df02171.css')}}">
+    <link rel="stylesheet" href="{{ asset('build/assets/app.4f13e4e9.css') }}">
     <link rel="stylesheet" href="{{ asset('css/app.css') }}" />
     @livewireStyles
     <script defer src="https://unpkg.com/alpinejs@3.x.x/dist/cdn.min.js"></script>
@@ -29,7 +27,7 @@
     <div class="mobile-menu md:hidden">
         <div class="mobile-menu-bar">
             <a href="" class="flex mr-auto">
-                <img alt="Midone - HTML Admin Template" class="w-24"  src="{{asset('images/logobig.png')}}">
+                <img alt="MotoringApp " class="w-24" src="{{ asset('images/logobig.png') }}">
             </a>
             <a href="javascript:;" class="mobile-menu-toggler"> <i data-lucide="bar-chart-2"
                     class="w-8 h-8 text-white transform -rotate-90"></i> </a>
@@ -54,13 +52,13 @@
                     </a>
                     <ul class="">
                         <li>
-                            <a href="{{route('admin.add.services')}}" class="menu menu--active">
+                            <a href="{{ route('admin.add.services') }}" class="menu menu--active">
                                 <div class="menu__icon"> <i data-lucide="activity"></i> </div>
                                 <div class="menu__title"> Add Services </div>
                             </a>
                         </li>
                         <li>
-                            <a href="{{route('admin.manage.services')}}" class="menu menu--active">
+                            <a href="{{ route('admin.manage.services') }}" class="menu menu--active">
                                 <div class="menu__icon"> <i data-lucide="activity"></i> </div>
                                 <div class="menu__title"> Manage Services </div>
                             </a>
@@ -76,15 +74,21 @@
                     </a>
                     <ul class="">
                         <li>
-                            <a href="{{route('admin.manage.product')}}" class="menu">
+                            <a href="{{ route('admin.manage.product') }}" class="menu">
+                                <div class="menu__icon"> <i data-lucide="activity"></i> </div>
+                                <div class="menu__title"> Cars </div>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="{{ route('admin.manage.other_product') }}" class="menu">
                                 <div class="menu__icon"> <i data-lucide="activity"></i> </div>
                                 <div class="menu__title"> Spare Parts </div>
                             </a>
                         </li>
                         <li>
-                            <a href="{{route('admin.manage.other_product')}}" class="menu">
+                            <a href="{{ route('admin.manage.features') }}" class="menu">
                                 <div class="menu__icon"> <i data-lucide="activity"></i> </div>
-                                <div class="menu__title"> Cars </div>
+                                <div class="menu__title"> Features </div>
                             </a>
                         </li>
 
@@ -98,7 +102,7 @@
                     </a>
                     <ul class="">
                         <li>
-                            <a href="{{route('admin.manage.requests')}}" class="menu">
+                            <a href="{{ route('admin.manage.requests') }}" class="menu">
                                 <div class="menu__icon"> <i data-lucide="activity"></i> </div>
                                 <div class="menu__title"> Service Requests </div>
                             </a>
@@ -120,15 +124,21 @@
                     </a>
                     <ul class="">
                         <li>
-                            <a href="side-menu-light-categories.html" class="menu">
+                            <a href="{{ route('admin.manage.other_product') }}" class="menu">
                                 <div class="menu__icon"> <i data-lucide="activity"></i> </div>
                                 <div class="menu__title"> Spare Parts </div>
                             </a>
                         </li>
                         <li>
-                            <a href="side-menu-light-add-product.html" class="menu">
+                            <a href="{{ route('admin.manage.product') }}" class="menu">
                                 <div class="menu__icon"> <i data-lucide="activity"></i> </div>
                                 <div class="menu__title"> Cars </div>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="{{ route('admin.manage.features') }}" class="menu">
+                                <div class="menu__icon"> <i data-lucide="activity"></i> </div>
+                                <div class="menu__title"> Features </div>
                             </a>
                         </li>
 
@@ -142,19 +152,19 @@
                     </a>
                     <ul class="">
                         <li>
-                            <a href="{{route('admin.manage.categories')}}" class="menu">
+                            <a href="{{ route('admin.manage.categories') }}" class="menu">
                                 <div class="menu__icon"> <i data-lucide="activity"></i> </div>
                                 <div class="menu__title"> Market place </div>
                             </a>
                         </li>
                         <li>
-                            <a href="{{route('admin.manage.locations')}}" class="menu">
+                            <a href="{{ route('admin.manage.locations') }}" class="menu">
                                 <div class="menu__icon"> <i data-lucide="activity"></i> </div>
                                 <div class="menu__title"> Location </div>
                             </a>
                         </li>
                         <li>
-                            <a href="{{route('admin.view.brands')}}" class="menu">
+                            <a href="{{ route('admin.view.brands') }}" class="menu">
                                 <div class="menu__icon"> <i data-lucide="activity"></i> </div>
                                 <div class="menu__title"> Car Brands </div>
                             </a>
@@ -182,7 +192,7 @@
         <!-- BEGIN: Side Menu -->
         <nav class="side-nav">
             <a href="" class="intro-x flex items-center pl-5 pt-4 mt-3">
-                <img alt="Midone - HTML Admin Template" class="w-12" src="{{asset('images/logobig.png')}}">
+                <img alt="MotoringApp " class="w-12" src="{{ asset('images/logobig.png') }}">
                 <span class="hidden xl:block text-white text-lg ml-3"> MotoringHub </span>
             </a>
             <div class="side-nav__devider my-6"></div>
@@ -202,19 +212,19 @@
                     <a href="javascript:;" class="side-menu">
                         <div class="side-menu__icon"> <i data-lucide="truck"></i> </div>
                         <div class="side-menu__title">
-                           Services
+                            Services
                             <div class="side-menu__sub-icon "> <i data-lucide="chevron-down"></i> </div>
                         </div>
                     </a>
                     <ul class="">
                         <li>
-                            <a href="{{route('admin.add.services')}}" class="side-menu">
+                            <a href="{{ route('admin.add.services') }}" class="side-menu">
                                 <div class="side-menu__icon"> <i data-lucide="plus-circle"></i> </div>
                                 <div class="side-menu__title">Add Service</div>
                             </a>
                         </li>
                         <li>
-                            <a href="{{route('admin.manage.services')}}" class="side-menu">
+                            <a href="{{ route('admin.manage.services') }}" class="side-menu">
                                 <div class="side-menu__icon"> <i data-lucide="activity"></i> </div>
                                 <div class="side-menu__title"> Manage Services </div>
                             </a>
@@ -226,21 +236,28 @@
                     <a href="javascript:;" class="side-menu">
                         <div class="side-menu__icon"> <i data-lucide="shopping-bag"></i> </div>
                         <div class="side-menu__title">
-                           Products
+                            Products
                             <div class="side-menu__sub-icon "> <i data-lucide="chevron-down"></i> </div>
                         </div>
                     </a>
                     <ul class="">
                         <li>
-                            <a href="{{route('admin.manage.other_product')}}" href="side-menu-light-dashboard-overview-1.html" class="side-menu">
+                            <a href="{{ route('admin.manage.other_product') }}"
+                                href="side-menu-light-dashboard-overview-1.html" class="side-menu">
                                 <div class="side-menu__icon"> <i data-lucide="plus-square"></i> </div>
                                 <div class="side-menu__title">Spare Parts</div>
                             </a>
                         </li>
                         <li>
-                            <a href="{{route('admin.manage.product')}}" class="side-menu">
+                            <a href="{{ route('admin.manage.product') }}" class="side-menu">
                                 <div class="side-menu__icon"> <i data-lucide="activity"></i> </div>
                                 <div class="side-menu__title">Cars </div>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="{{ route('admin.manage.features') }}" class="side-menu">
+                                <div class="side-menu__icon"> <i data-lucide="activity"></i> </div>
+                                <div class="side-menu__title">Features </div>
                             </a>
                         </li>
 
@@ -257,7 +274,7 @@
                     </a>
                     <ul class="">
                         <li>
-                            <a href="{{route('admin.manage.requests')}}" class="side-menu">
+                            <a href="{{ route('admin.manage.requests') }}" class="side-menu">
                                 <div class="side-menu__icon"> <i data-lucide="truck"></i> </div>
                                 <div class="side-menu__title">Service Request</div>
                             </a>
@@ -280,13 +297,13 @@
                     </a>
                     <ul class="">
                         <li>
-                            <a href="side-menu-light-categories.html" class="side-menu">
+                            <a href={{ route('admin.add.user') }} class="side-menu">
                                 <div class="side-menu__icon"> <i data-lucide="user-plus"></i> </div>
                                 <div class="side-menu__title"> Add User </div>
                             </a>
                         </li>
                         <li>
-                            <a href="side-menu-light-add-product.html" class="side-menu">
+                            <a href={{ route('admin.manage.users') }} class="side-menu">
                                 <div class="side-menu__icon"> <i data-lucide="edit"></i> </div>
                                 <div class="side-menu__title"> Manage Users </div>
                             </a>
@@ -303,19 +320,19 @@
                     </a>
                     <ul class="">
                         <li>
-                            <a href="{{route('admin.manage.categories')}}" class="side-menu">
+                            <a href="{{ route('admin.manage.categories') }}" class="side-menu">
                                 <div class="side-menu__icon"> <i data-lucide="eye"></i> </div>
                                 <div class="side-menu__title"> MarkekPlace Category </div>
                             </a>
                         </li>
                         <li>
-                            <a href="{{route('admin.manage.locations')}}" class="side-menu">
+                            <a href="{{ route('admin.manage.locations') }}" class="side-menu">
                                 <div class="side-menu__icon"> <i data-lucide="eye"></i> </div>
                                 <div class="side-menu__title">Service Location</div>
                             </a>
                         </li>
                         <li>
-                            <a href="{{route('admin.view.brands')}}" class="side-menu">
+                            <a href="{{ route('admin.view.brands') }}" class="side-menu">
                                 <div class="side-menu__icon"> <i data-lucide="eye"></i> </div>
                                 <div class="side-menu__title"> Car Brand </div>
                             </a>
@@ -384,7 +401,7 @@
                 <div class="intro-x dropdown w-8 h-8">
                     <div class="dropdown-toggle w-8 h-8 rounded-full overflow-hidden shadow-lg image-fit zoom-in"
                         role="button" aria-expanded="false" data-tw-toggle="dropdown">
-                        <img alt="Midone - HTML Admin Template" src="{{asset('images/administration.png')}}">
+                        <img alt="MotoringApp " src="{{ asset('images/administration.png') }}">
                     </div>
                     <div class="dropdown-menu w-56">
                         <ul class="dropdown-content bg-primary text-white">
@@ -424,7 +441,7 @@
                 <!-- END: Account Menu -->
             </div>
             <!-- END: Top Bar -->
-            {{$slot}}
+            {{ $slot }}
         </div>
         <!-- END: Content -->
     </div>
@@ -435,7 +452,7 @@
     </script>
     <script src="https://maps.googleapis.com/maps/api/js?key=[" your-google-map-api"]&libraries=places"></script>
     <script src="{{ asset('js/app.js') }}"></script>
-    <script src="{{ asset('js/app.a1dd5ee6.js') }}"></script>
+    <script src="{{ asset('build/assets/app.19a30b32.js') }}"></script>
     @livewireScripts
     <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
 

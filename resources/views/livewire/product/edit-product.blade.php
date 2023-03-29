@@ -37,14 +37,14 @@
         <div class="box p-5 rounded-md mt-5">
             <div class="flex items-center border-b border-slate-200/60 dark:border-darkmode-400 pb-5 mb-5">
                 <div class="font-medium text-base truncate">Product Details</div>
-                <a href="" class="flex items-center ml-auto text-primary"> <svg
-                        xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
-                        fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
-                        stroke-linejoin="round" icon-name="edit" data-lucide="edit"
-                        class="lucide lucide-edit w-4 h-4 mr-2">
+                <a href="{{ route('admin.inspect.product', $product->id) }}"
+                    class="flex items-center ml-auto text-primary"> <svg xmlns="http://www.w3.org/2000/svg"
+                        width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                        stroke-width="2" stroke-linecap="round" stroke-linejoin="round" icon-name="edit"
+                        data-lucide="edit" class="lucide lucide-edit w-4 h-4 mr-2">
                         <path d="M11 4H4a2 2 0 00-2 2v14a2 2 0 002 2h14a2 2 0 002-2v-7"></path>
                         <path d="M18.5 2.5a2.121 2.121 0 013 3L12 15l-4 1 1-4 9.5-9.5z"></path>
-                    </svg> More Details </a>
+                    </svg> Inspection details </a>
             </div>
             <div class="flex items-center"> <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24"
                     viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
@@ -112,6 +112,20 @@
                 </svg> Selling Condition: {{ $product->sellingCondition }} </div>
             <div class="flex items-center mt-3"> <svg xmlns="http://www.w3.org/2000/svg" width="24"
                     height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                    stroke-linecap="round" stroke-linejoin="round" icon-name="map-pin" data-lucide="map-pin"
+                    class="lucide lucide-map-pin w-4 h-4 text-slate-500 mr-2">
+                    <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"></path>
+                    <circle cx="12" cy="10" r="3"></circle>
+                </svg> Features: <a href="{{ route('admin.product.features', $product->id) }}"
+                    class="flex items-center ml-auto text-primary"> <svg xmlns="http://www.w3.org/2000/svg"
+                        width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                        stroke-width="2" stroke-linecap="round" stroke-linejoin="round" icon-name="edit"
+                        data-lucide="edit" class="lucide lucide-edit w-4 h-4 mr-2">
+                        <path d="M11 4H4a2 2 0 00-2 2v14a2 2 0 002 2h14a2 2 0 002-2v-7"></path>
+                        <path d="M18.5 2.5a2.121 2.121 0 013 3L12 15l-4 1 1-4 9.5-9.5z"></path>
+                    </svg> View Features </a> </div>
+            <div class="flex items-center mt-3"> <svg xmlns="http://www.w3.org/2000/svg" width="24"
+                    height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
                     stroke-linecap="round" stroke-linejoin="round" icon-name="calendar" data-lucide="calendar"
                     class="lucide lucide-calendar w-4 h-4 text-slate-500 mr-2">
                     <rect x="3" y="4" width="18" height="18" rx="2"
@@ -137,7 +151,8 @@
                 @enderror
             </div>
             <div class="flex items-center dark:border-darkmode-400 pt-5 mt-5 font-medium">
-                <a href="#" wire:click='changeStatus' type="button" class="btn btn-outline-secondary w-full py-1 px-2">Change Status</a>
+                <a href="#" wire:click='changeStatus' type="button"
+                    class="btn btn-outline-secondary w-full py-1 px-2">Change Status</a>
             </div>
         </div>
         @if ($product->type === 'Dropoff')
@@ -196,34 +211,26 @@
     </div>
     <div class="col-span-12 lg:col-span-7 2xl:col-span-8">
         <div class="grid grid-cols-12 gap-5">
-            @foreach ($product->images as $image)
+            @foreach ($product->images as $key => $image)
                 <div class="intro-y col-span-12 sm:col-span-6 2xl:col-span-4">
                     <div class="box">
                         <div class="p-5">
                             <div
                                 class="h-40 2xl:h-56 image-fit rounded-md overflow-hidden before:block before:absolute before:w-full before:h-full before:top-0 before:left-0 before:z-10 before:bg-gradient-to-t before:from-black before:to-black/10">
-                                <img alt="Midone - HTML Admin Template" class="rounded-md"
-                                    src="{{ asset('storage/' . $image) }}">
+                                <img alt="MotoringApp " class="rounded-md"
+                                    src="{{ asset('public/storage/' . $image) }}">
                             </div>
 
                         </div>
                         <div
                             class="flex justify-center lg:justify-end items-center p-5 border-t border-slate-200/60 dark:border-darkmode-400">
 
-                            <a class="flex items-center mr-3" href="javascript:;"> <svg
-                                    xmlns="http://www.w3.org/2000/svg" width="24" height="24"
+                            <a href="#" wire:click="deleteImage({{ $key }})"
+                                class="flex items-center text-danger" data-tw-target="#delete-confirmation-modal">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24"
                                     viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
-                                    stroke-linecap="round" stroke-linejoin="round" icon-name="check-square"
-                                    data-lucide="check-square" class="lucide lucide-check-square w-4 h-4 mr-1">
-                                    <polyline points="9 11 12 14 22 4"></polyline>
-                                    <path d="M21 12v7a2 2 0 01-2 2H5a2 2 0 01-2-2V5a2 2 0 012-2h11"></path>
-                                </svg> Edit </a>
-                            <a class="flex items-center text-danger" href="javascript:;" data-tw-toggle="modal"
-                                data-tw-target="#delete-confirmation-modal"> <svg xmlns="http://www.w3.org/2000/svg"
-                                    width="24" height="24" viewBox="0 0 24 24" fill="none"
-                                    stroke="currentColor" stroke-width="2" stroke-linecap="round"
-                                    stroke-linejoin="round" icon-name="trash-2" data-lucide="trash-2"
-                                    class="lucide lucide-trash-2 w-4 h-4 mr-1">
+                                    stroke-linecap="round" stroke-linejoin="round" icon-name="trash-2"
+                                    data-lucide="trash-2" class="lucide lucide-trash-2 w-4 h-4 mr-1">
                                     <polyline points="3 6 5 6 21 6"></polyline>
                                     <path d="M19 6v14a2 2 0 01-2 2H7a2 2 0 01-2-2V6m3 0V4a2 2 0 012-2h4a2 2 0 012 2v2">
                                     </path>
@@ -277,11 +284,11 @@
                                         <g transform="translate(1 1)">
                                             <circle cx="5" cy="50" r="5" fill="white">
                                                 <animate attributeName="cy" begin="0s" dur="2.2s"
-                                                    values="50;5;50;50" calcMode="linear"
-                                                    repeatCount="indefinite"></animate>
+                                                    values="50;5;50;50" calcMode="linear" repeatCount="indefinite">
+                                                </animate>
                                                 <animate attributeName="cx" begin="0s" dur="2.2s"
-                                                    values="5;27;49;5" calcMode="linear"
-                                                    repeatCount="indefinite"></animate>
+                                                    values="5;27;49;5" calcMode="linear" repeatCount="indefinite">
+                                                </animate>
                                             </circle>
                                             <circle cx="27" cy="5" r="5" fill="white">
                                                 <animate attributeName="cy" begin="0s" dur="2.2s"
@@ -293,8 +300,8 @@
                                             </circle>
                                             <circle cx="49" cy="50" r="5" fill="white">
                                                 <animate attributeName="cy" begin="0s" dur="2.2s"
-                                                    values="50;50;5;50" calcMode="linear"
-                                                    repeatCount="indefinite"></animate>
+                                                    values="50;50;5;50" calcMode="linear" repeatCount="indefinite">
+                                                </animate>
                                                 <animate attributeName="cx" from="49" to="49"
                                                     begin="0s" dur="2.2s" values="49;5;27;49"
                                                     calcMode="linear" repeatCount="indefinite"></animate>

@@ -33,6 +33,8 @@
                     <p class="float-right text-red-400">{{$message}}</p>
                 </div>
             @enderror
+            <div wire:loading wire:target="picture" class="text-yellow-500 my-2">Uploading, Please wait...
+            </div>
 
         </div>
 

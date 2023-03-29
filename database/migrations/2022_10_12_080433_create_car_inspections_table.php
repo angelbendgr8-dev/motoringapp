@@ -16,7 +16,15 @@ return new class extends Migration
         Schema::create('car_inspections', function (Blueprint $table) {
             $table->id();
             $table->foreignId('user_id');
-            $table->foreignId('car_id');
+            $table->foreignId('product_id');
+            $table->json('engines')->nullable();
+            $table->json('electricals')->nullable();
+            $table->json('transmission_and_clutch')->nullable();
+            $table->json('suspension_and_steering')->nullable();
+            $table->json('test_drive')->nullable();
+            $table->json('exterior')->nullable();
+            $table->json('interior')->nullable();
+            $table->json('air_conditioning')->nullable();
             $table->string('status')->default('pending');
             $table->timestamps();
         });

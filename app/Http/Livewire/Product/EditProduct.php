@@ -37,10 +37,22 @@ class EditProduct extends Component
         $this->alert('success', 'Images added to Product successfully');
 
     }
+    public function deleteImage($image)
+    {
+    //    dd($image);
+        $selected = $this->product->images[$image];
+        $newImage = array_filter($this->product->images,function($value) use ($selected) {
+            return $value !== $selected;
+        });
+        $this->product->images = $newImage;
+        $this->product->save();
+        // dd($newImage);
+    }
 
     public function mount($id)
     {
-        $this->product = Product::find($id)->with('user')->first();
+
+        $this->product = Product::whereId($id)->with('user')->first();
         // dd($this->product);
     }
     public function render()

@@ -7,7 +7,7 @@
                 {{-- <span class="text-white text-lg ml-3"> Tinker </span> --}}
             </a>
             {{-- <div class="my-auto">
-                <img alt="Midone - HTML Admin Template" class="-intro-x w-1/2 -mt-16" src="{{asset('Admin/dist/images/illustration.svg')}}">
+                <img alt="MotoringApp " class="-intro-x w-1/2 -mt-16" src="{{asset('Admin/dist/images/illustration.svg')}}">
                 <div class="-intro-x text-white font-medium text-4xl leading-tight mt-10">
                     A few more clicks to
                     <br>

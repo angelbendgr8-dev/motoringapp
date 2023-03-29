@@ -69,21 +69,57 @@ class ProductController extends ResponseController
 
     public function getCars()
     {
-        $cars = Product::all();
+        $cars = Product::with('inspection')->limit(10)->get();
 
         return $this->sendResponse($cars, 'Products fetched successfully.');
+    }
+    public function getPageCars()
+    {
+        $cars = Product::with('inspection')->paginate(10);
+
+        return $this->sendResponse($cars, 'Products fetched successfully.');
+    }
+    public function searchCars(Request $request)
+    {
+    //    return $request->all();
+        $cars = Product::where([
+            ['name', '!=', Null],
+            [function ($query) use ($request) {
+                if (($s = $request->s)) {
+                    $query->orWhere('maker', 'LIKE', '%' . $s . '%')
+                        ->orWhere('model', 'LIKE', '%' . $s . '%')
+                        ->get();
+                }
+            }]
+        ])->paginate(6);
 
 
-
+        return $this->sendResponse($cars, 'Products fetched successfully.');
     }
     public function getParts()
     {
-        $cars = OtherProduct::all();
+        $cars = OtherProduct::limit(10)->get();
+        return $this->sendResponse($cars, 'Products fetched successfully.');
+    }
+    public function getPageParts()
+    {
+        $cars = OtherProduct::paginate(2);
 
         return $this->sendResponse($cars, 'Products fetched successfully.');
+    }
+    public function searchParts(Request $request)
+    { $users = OtherProduct::where([
+        ['name', '!=', Null],
+        [function ($query) use ($request) {
+            if (($s = $request->s)) {
+                $query->orWhere('name', 'LIKE', '%' . $s . '%')
+                    ->get();
+            }
+        }]
+    ])->paginate(6);
 
 
-
+    return $this->sendResponse($users, 'Products fetched successfully.');
     }
     public function orderPart(Request $request)
     {

@@ -22,6 +22,17 @@ class OtherProduct extends Component
     {
         return ModelsOtherProduct::latest()->paginate(10);
     }
+    public function deleteImage($image)
+    {
+    //    dd($image);
+        $selected = $this->product->images[$image];
+        $newImage = array_filter($this->product->images,function($value) use ($selected) {
+            return $value !== $selected;
+        });
+        $this->product->images = $newImage;
+        $this->product->save();
+        // dd($newImage);
+    }
     public function render()
     {
         return view('livewire.product.other-product',[

@@ -47,12 +47,18 @@ Route::controller(ContentController::class)->group(function () {
     Route::get('content/categories', 'getCategories');
     Route::get('content/brands/{id}', 'getBrandById');
     Route::get('content/car/brands', 'getBrands');
+    Route::get('content/car/all/brands', 'getAllBrands');
     Route::get('/products/cars','getCars');
+
 });
 Route::controller(ProductController::class)->group(function () {
 
     Route::get('/products/cars','getCars');
+    Route::get('/products/all/cars','getPageCars');
     Route::get('/products/parts','getParts');
+    Route::get('/products/search/parts','searchParts');
+    Route::get('/products/search/cars','searchCars');
+    Route::get('/products/all/parts','getPageParts');
     Route::post('/order/parts','orderPart');
     Route::post('/book/inspection','inspectCar');
 });
